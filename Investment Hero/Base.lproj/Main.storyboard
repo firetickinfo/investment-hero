@@ -20,7 +20,35 @@
                     <view key="view" contentMode="scaleToFill" id="VNM-l9-S7O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upc-F0-2LX" customClass="MaterialView" customModule="Investment_Hero" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="let's talk!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zd-MU-K33">
+                                        <rect key="frame" x="139.5" y="20" width="96" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="5Uy-jg-zZN"/>
+                                            <constraint firstAttribute="width" constant="96" id="UQd-mi-7Rd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.3803921569" green="0.74901960779999999" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2zd-MU-K33" firstAttribute="centerY" secondItem="Upc-F0-2LX" secondAttribute="centerY" id="LDO-bV-uUp"/>
+                                    <constraint firstItem="2zd-MU-K33" firstAttribute="centerX" secondItem="Upc-F0-2LX" secondAttribute="centerX" id="jJc-YD-bfv"/>
+                                    <constraint firstAttribute="height" constant="60" id="uUT-qf-lDF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Upc-F0-2LX" secondAttribute="trailing" id="8i2-YM-dpJ"/>
+                            <constraint firstItem="Upc-F0-2LX" firstAttribute="leading" secondItem="VNM-l9-S7O" secondAttribute="leading" id="Gcc-MV-ZOK"/>
+                            <constraint firstItem="Upc-F0-2LX" firstAttribute="top" secondItem="P3Y-YJ-WzR" secondAttribute="bottom" id="Zrk-MT-qnt"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="LCo-fi-8VW"/>
                 </viewController>
@@ -39,13 +67,41 @@
                     <view key="view" contentMode="scaleToFill" id="MN4-yd-8y3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVY-Gh-w3p" customClass="MaterialView" customModule="Investment_Hero" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="portfolio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkP-7V-a8k">
+                                        <rect key="frame" x="139.5" y="20" width="96" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="4Hi-90-0R2"/>
+                                            <constraint firstAttribute="height" constant="21" id="Z2Y-nx-Yk5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.38039215686274508" green="0.74901960784313726" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="FkP-7V-a8k" firstAttribute="centerY" secondItem="ZVY-Gh-w3p" secondAttribute="centerY" id="3XN-te-sEF"/>
+                                    <constraint firstAttribute="height" constant="60" id="GIF-A7-mN1"/>
+                                    <constraint firstItem="FkP-7V-a8k" firstAttribute="centerX" secondItem="ZVY-Gh-w3p" secondAttribute="centerX" id="nED-zv-yME"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZVY-Gh-w3p" firstAttribute="top" secondItem="ei2-nQ-TyF" secondAttribute="bottom" id="PVh-rG-1kb"/>
+                            <constraint firstAttribute="trailing" secondItem="ZVY-Gh-w3p" secondAttribute="trailing" id="cb3-Md-IBB"/>
+                            <constraint firstItem="ZVY-Gh-w3p" firstAttribute="leading" secondItem="MN4-yd-8y3" secondAttribute="leading" id="zTM-Rq-tk0"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="S3N-P5-gKI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Id1-XO-tDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="-246"/>
+            <point key="canvasLocation" x="-146.40000000000001" y="-246.02698650674665"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2Fz-1K-1ns">
