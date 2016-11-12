@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="48t-3T-HFB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sb7-Nw-wxe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -218,28 +218,131 @@
             </objects>
             <point key="canvasLocation" x="-146.40000000000001" y="-246.02698650674665"/>
         </scene>
-        <!--Peek OrderVC-->
-        <scene sceneID="YQO-sv-UhX">
+        <!--Welcome PageVC-->
+        <scene sceneID="Ks0-1w-pL2">
             <objects>
-                <viewController storyboardIdentifier="PeekOrderVC" id="7Mb-h0-l1o" customClass="PeekOrderVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="sb7-Nw-wxe" customClass="WelcomePageVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3f-XD-0ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2145" y="81"/>
+        </scene>
+        <!--Tutorial ScreenVC-->
+        <scene sceneID="6VC-qe-fPs">
+            <objects>
+                <viewController storyboardIdentifier="page1ViewController" id="YgJ-bI-ffN" customClass="TutorialScreenVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZCK-kT-9p3"/>
-                        <viewControllerLayoutGuide type="bottom" id="MjY-Va-ZVf"/>
+                        <viewControllerLayoutGuide type="top" id="uvT-BO-KqC"/>
+                        <viewControllerLayoutGuide type="bottom" id="yem-Q2-1BE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tqh-On-gkA">
+                    <view key="view" contentMode="scaleToFill" id="lBd-LH-J5Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLA-Gj-L6v">
+                                <rect key="frame" x="16" y="80" width="343" height="374"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="374" id="5lF-DR-ZKg"/>
+                                    <constraint firstAttribute="width" constant="343" id="z0Z-53-GMs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38039215686274508" green="0.74901960784313726" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="YLA-Gj-L6v" firstAttribute="top" secondItem="uvT-BO-KqC" secondAttribute="bottom" constant="60" id="6F1-jt-Pn3"/>
+                            <constraint firstItem="YLA-Gj-L6v" firstAttribute="centerX" secondItem="lBd-LH-J5Y" secondAttribute="centerX" id="oYL-yT-UKn"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TIn-5X-OUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9es-LP-F4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614" y="-228"/>
+            <point key="canvasLocation" x="-2762.4000000000001" y="749.7751124437782"/>
+        </scene>
+        <!--Tutorial ScreenVC-->
+        <scene sceneID="dwf-Bd-fRg">
+            <objects>
+                <viewController storyboardIdentifier="page2ViewController" id="1Fq-9c-IH5" customClass="TutorialScreenVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VST-c2-D6C"/>
+                        <viewControllerLayoutGuide type="bottom" id="yjW-sY-UFU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aj1-3R-nzY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNE-wL-wQS">
+                                <rect key="frame" x="16" y="80" width="343" height="374"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="3ml-Dx-c5X"/>
+                                    <constraint firstAttribute="height" constant="374" id="wz5-Kx-xC2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3803921569" green="0.74901960779999999" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="KNE-wL-wQS" firstAttribute="centerX" secondItem="aj1-3R-nzY" secondAttribute="centerX" id="6is-VF-PI4"/>
+                            <constraint firstItem="KNE-wL-wQS" firstAttribute="top" secondItem="VST-c2-D6C" secondAttribute="bottom" constant="60" id="JgJ-iz-tyF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQi-IE-las" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2070" y="750"/>
+        </scene>
+        <!--Tutorial ScreenVC-->
+        <scene sceneID="D5G-sL-K8v">
+            <objects>
+                <viewController storyboardIdentifier="page3ViewController" id="26W-7a-6dJ" customClass="TutorialScreenVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bnS-tv-Kqd"/>
+                        <viewControllerLayoutGuide type="bottom" id="z4j-vK-7dD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YR0-3Z-mDq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-Ok-XP9">
+                                <rect key="frame" x="16" y="80" width="343" height="374"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="374" id="YhJ-AA-MK1"/>
+                                    <constraint firstAttribute="width" constant="343" id="hYk-uw-mwF"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4M-pF-Yen" customClass="MaterialButton" customModule="Investment_Hero" customModuleProvider="target">
+                                <rect key="frame" x="84" y="577" width="206" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206" id="aMd-NB-H5D"/>
+                                    <constraint firstAttribute="height" constant="70" id="sVI-6n-y5f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                <state key="normal" title="GET STARTED">
+                                    <color key="titleColor" red="0.3803921569" green="0.74901960779999999" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="48t-3T-HFB" kind="show" id="13T-99-uGu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38039215686274508" green="0.74901960784313726" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="R4M-pF-Yen" firstAttribute="centerX" secondItem="YR0-3Z-mDq" secondAttribute="centerX" id="0A1-5z-bh3"/>
+                            <constraint firstItem="z4j-vK-7dD" firstAttribute="top" secondItem="R4M-pF-Yen" secondAttribute="bottom" constant="20" id="M0q-h5-2L8"/>
+                            <constraint firstItem="jqx-Ok-XP9" firstAttribute="centerX" secondItem="YR0-3Z-mDq" secondAttribute="centerX" id="h04-3n-wih"/>
+                            <constraint firstItem="jqx-Ok-XP9" firstAttribute="top" secondItem="bnS-tv-Kqd" secondAttribute="bottom" constant="60" id="sjK-aR-veN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6QS-wR-2fR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1364" y="759.67016491754134"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2Fz-1K-1ns">
             <objects>
-                <tabBarController id="48t-3T-HFB" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="page4ViewController" id="48t-3T-HFB" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="79T-4f-mBw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -109,9 +109,6 @@ extension PortfolioVC : UITableViewDelegate, UITableViewDataSource {
         }
         return nil
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "Popover", sender: nil)
-    }
 }
 extension PortfolioVC : NewOrderDelegate {
     func dismissNewOrderScreen() {

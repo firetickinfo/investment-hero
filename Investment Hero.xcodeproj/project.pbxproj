@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		125FFBA3DFD821FD6F5B29E4 /* Pods_Investment_Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDA497E81D49ABA36EDE727 /* Pods_Investment_Hero.framework */; };
+		4615D5341DD76C05008E59FE /* WelcomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615D5331DD76C05008E59FE /* WelcomePageVC.swift */; };
+		4615D5361DD77C73008E59FE /* TutorialScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615D5351DD77C73008E59FE /* TutorialScreenVC.swift */; };
+		4615D5381DD77D29008E59FE /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615D5371DD77D29008E59FE /* MaterialButton.swift */; };
 		465858A81DD6E7A000649B0A /* AnimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465858A71DD6E7A000649B0A /* AnimationEngine.swift */; };
 		465858AA1DD6E7FC00649B0A /* SymbolCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465858A91DD6E7FC00649B0A /* SymbolCard.xib */; };
 		465858AC1DD6E86C00649B0A /* SymbolCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465858AB1DD6E86C00649B0A /* SymbolCard.swift */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		0CFA8067BB1758BE2B3ABB2B /* Pods-Investment Hero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Investment Hero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Investment Hero/Pods-Investment Hero.debug.xcconfig"; sourceTree = "<group>"; };
+		4615D5331DD76C05008E59FE /* WelcomePageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageVC.swift; sourceTree = "<group>"; };
+		4615D5351DD77C73008E59FE /* TutorialScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialScreenVC.swift; sourceTree = "<group>"; };
+		4615D5371DD77D29008E59FE /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		465858A71DD6E7A000649B0A /* AnimationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationEngine.swift; sourceTree = "<group>"; };
 		465858A91DD6E7FC00649B0A /* SymbolCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymbolCard.xib; sourceTree = "<group>"; };
 		465858AB1DD6E86C00649B0A /* SymbolCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolCard.swift; sourceTree = "<group>"; };
@@ -153,6 +159,8 @@
 				46AE5E201DD68A50009ABD5F /* ConversationVC.swift */,
 				46AE5E311DD69A96009ABD5F /* ChatVC.swift */,
 				465858B31DD75BD100649B0A /* PeekOrderVC.swift */,
+				4615D5331DD76C05008E59FE /* WelcomePageVC.swift */,
+				4615D5351DD77C73008E59FE /* TutorialScreenVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 			children = (
 				46AE5E251DD68E11009ABD5F /* MaterialView.swift */,
 				46AE5E3C1DD6C4BA009ABD5F /* MaterialTextField.swift */,
+				4615D5371DD77D29008E59FE /* MaterialButton.swift */,
 			);
 			name = "Material ";
 			sourceTree = "<group>";
@@ -357,6 +366,7 @@
 				465858B21DD70AF500649B0A /* PreviewOrderCard.swift in Sources */,
 				46AE5E0C1DD6889A009ABD5F /* PortfolioVC.swift in Sources */,
 				46AE5E3D1DD6C4BA009ABD5F /* MaterialTextField.swift in Sources */,
+				4615D5361DD77C73008E59FE /* TutorialScreenVC.swift in Sources */,
 				46AE5E431DD6C8C4009ABD5F /* UserdataService.swift in Sources */,
 				46AE5E2D1DD6975C009ABD5F /* DataService.swift in Sources */,
 				46AE5E2F1DD697A5009ABD5F /* WebService.swift in Sources */,
@@ -366,7 +376,9 @@
 				465858B41DD75BD100649B0A /* PeekOrderVC.swift in Sources */,
 				46AE5E411DD6C7E4009ABD5F /* Extensions.swift in Sources */,
 				46AE5E261DD68E11009ABD5F /* MaterialView.swift in Sources */,
+				4615D5381DD77D29008E59FE /* MaterialButton.swift in Sources */,
 				46AE5E451DD6D343009ABD5F /* Symbol.swift in Sources */,
+				4615D5341DD76C05008E59FE /* WelcomePageVC.swift in Sources */,
 				46AE5E0A1DD6889A009ABD5F /* AppDelegate.swift in Sources */,
 				46AE5E291DD69354009ABD5F /* PortfolioCell.swift in Sources */,
 				46AE5E231DD68CE3009ABD5F /* Constants.swift in Sources */,
