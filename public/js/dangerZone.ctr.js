@@ -109,7 +109,7 @@ angular.module('dangerZone')
                           console.log($scope.newPrice);
                           console.log(id);
                           
-                          $http.post('https://investment-hero.herokuapp.com/changeCurrentPrice?id=' + id + '&newPrice=' + $scope.newPrice).
+                          $http.get('https://investment-hero.herokuapp.com/changeCurrentPrice?id=' + id + '&newPrice=' + $scope.newPrice).
                                 success(function(data, status, headers, config) {
                                     
                                   })
