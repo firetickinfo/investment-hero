@@ -67,7 +67,7 @@ angular.module('dangerZone')
         }])
         
         .controller("dangerZoneCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $http) {
-            
+            $scope.$root.progress = false;
         })
         
         .controller("indexCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $http) {
@@ -75,10 +75,13 @@ angular.module('dangerZone')
         })
         
         .controller("updatePricesCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $stateParams, $http, $mdDialog) {
+            $scope.$root.progress = true;
+            
             $http.get(getOrders).
                 success(function(data, status, headers, config) {
                     console.log(data);
                     $scope.orders = data.body;
+                    $scope.$root.progress = false;
                 })
                 .error(function(data, status, headers, config) {
                     console.error(data);
@@ -110,12 +113,12 @@ angular.module('dangerZone')
                           console.log(id);
                           
                           $http.get('https://investment-hero.herokuapp.com/changeCurrentPrice?id=' + id + '&newPrice=' + $scope.newPrice).
-                                success(function(data, status, headers, config) {
-                                    
+                                  success(function(data, status, headers, config) {
+                                    $scope.closeDialog();
+                                    $scope.showSimpleToast("Price Updated");
                                   })
                                   .error(function(data, status, headers, config) {
-                                      // called asynchronously if an error occurs
-                                      // or server returns response with an error status.
+                                    $scope.showSimpleToast("Error Updating Price!");
                           });
                       };
 
