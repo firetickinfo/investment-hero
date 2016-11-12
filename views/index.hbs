@@ -42,6 +42,23 @@
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    
+    <script>
+      // Initialize the Firebase SDK
+      var config = {
+        apiKey: '801c33fe3ea7b4e441ed6462ac36507ef3929f0f',
+        authDomain: 'https://investment-hero.firebaseapp.com',
+        databaseURL: 'https://investment-hero.firebaseio.com'
+      };
+      firebase.initializeApp(config);
+    </script>
+    
     <script src='node_modules/angular-animate/angular-animate.js'></script>
     <script src='node_modules/angular-aria/angular-aria.js'></script>
     <script src='node_modules/angular-material/angular-material.js'></script>
@@ -51,13 +68,7 @@
 
     <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
     
-    <script src='node_modules/angular-ui-router-anim-in-out/anim-in-out.js'></script>
-    
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
-    
-    <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+    <script src='node_modules/angular-ui-router-anim-in-out/anim-in-out.js'></script>    
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.7/d3.min.js" charset="utf-8"></script>

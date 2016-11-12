@@ -1,12 +1,15 @@
 <md-card>
     <md-list>
-        <md-list-item ng-repeat="order in orders track by $index" class="noright" ng-click="changeCurrentPrice($index)">
+        <md-list-item ng-repeat="order in orders track by $index" class="noright" ng-click="changeCurrentPrice(order)">
             <img alt="{{order.symbol}}" ng-src="img/{{order.symbol}}.jpg" class="md-avatar stock-icon" />
+            
             <p>{{order.symbol}}</p>
-            <p class="md-secondary">{{order.current_price | currency}}</p>
-            <md-button class="md-secondary">
-                <md-icon class="mdi mdi-pencil mdi-fix"></md-icon>
-            </md-button>
+            
+            <md-input-container class="md-block" style="width: 100%; padding: 0; margin-top: 50px;" flex-gt-sm>
+                <label>Current Price</label>
+                <input ng-model="order.current_price">
+            </md-input-container>
+
         </md-list-item>
     </md-list>
 </md-card>

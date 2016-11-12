@@ -74,85 +74,78 @@ angular.module('dangerZone')
             
         })
         
-        .controller("updatePricesCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $stateParams, $http, $mdDialog) {
+        .controller("updatePricesCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $stateParams, $http, $mdDialog, $firebaseObject) {
             $scope.$root.progress = true;
             
-            $http.get(getOrders).
-                success(function(data, status, headers, config) {
-                    console.log(data);
-                    $scope.orders = data.body;
-                    $scope.$root.progress = false;
-                })
-                .error(function(data, status, headers, config) {
-                    console.error(data);
-                });
+            var ref = firebase.database().ref().child("orders");
+            var syncObject = $firebaseObject(ref);
+                
+            syncObject.$bindTo($scope.$root, "orders");
+            $scope.$root.progress = false;
             
-            $scope.changeCurrentPrice = function(index) {
-                console.log($scope.orders[Object.keys($scope.orders)[index]].symbol);
-                
-                var item = $scope.orders[Object.keys($scope.orders)[index]];
-                var id = Object.keys($scope.orders)[index];
-                
-                $mdDialog.show({
-                  controller: ['$rootScope', '$scope', '$mdDialog', '$mdToast', function ($rootScope, $scope, $mdDialog, $mdToast) {
-                      $scope.item = item;
-                      
-                      $scope.closeDialog = function() {
-                          $mdDialog.hide();
-                      };
-
-                      var last = {
-                          bottom: true,
-                          top: false,
-                          left: false,
-                          right: true
-                      };
-                      
-                      $scope.updatePrice = function() {
-                          console.log($scope.newPrice);
-                          console.log(id);
-                          
-                          $http.get('https://investment-hero.herokuapp.com/changeCurrentPrice?id=' + id + '&newPrice=' + $scope.newPrice).
-                                  success(function(data, status, headers, config) {
-                                    $scope.closeDialog();
-                                    $scope.showSimpleToast("Price Updated");
-                                  })
-                                  .error(function(data, status, headers, config) {
-                                    $scope.showSimpleToast("Error Updating Price!");
-                          });
-                      };
-
-                      $scope.toastPosition = angular.extend({},last);
-                      $scope.getToastPosition = function() {
-                        sanitizePosition();
-
-                        return Object.keys($scope.toastPosition)
-                          .filter(function(pos) { return $scope.toastPosition[pos]; })
-                          .join(' ');
-                      };
-
-                      function sanitizePosition() {
-                        var current = $scope.toastPosition;
-                        last = angular.extend({},current);
-                      }
-
-                      $scope.showSimpleToast = function(message) {
-                        var pinTo = $scope.getToastPosition();
-
-                        $mdToast.show(
-                          $mdToast.simple()
-                            .textContent(message)
-                            .position(pinTo)
-                            .hideDelay(3000)
-                        );
-                      };
-                  }],
-                  templateUrl: 'js/partials/changeCurrentPrice.html',
-                  parent: angular.element(document.body),
-                  clickOutsideToClose: true,
-                  fullscreen: false,
-                  openFrom: '#brand',
-                  closeTo: '#brand'
-                });
-            }
+//            $scope.changeCurrentPrice = function(item) {                                
+//                var id = Object.keys(syncObject).filter(function(key) {return syncObject[key] === item})[0];
+//                
+//                $mdDialog.show({
+//                  controller: ['$rootScope', '$scope', '$mdDialog', '$mdToast', function ($rootScope, $scope, $mdDialog, $mdToast) {
+//                      $scope.item = item;
+//                      
+//                      $scope.closeDialog = function() {
+//                          $mdDialog.hide();
+//                      };
+//
+//                      var last = {
+//                          bottom: true,
+//                          top: false,
+//                          left: false,
+//                          right: true
+//                      };
+//                      
+//                      $scope.updatePrice = function() {
+//                          console.log($scope.newPrice);
+//                          console.log(id);
+//                          
+//                          $http.get('https://investment-hero.herokuapp.com/changeCurrentPrice?id=' + id + '&newPrice=' + $scope.newPrice).
+//                                  success(function(data, status, headers, config) {
+//                                    $scope.closeDialog();
+//                                    $scope.showSimpleToast("Price Updated");
+//                                  })
+//                                  .error(function(data, status, headers, config) {
+//                                    $scope.showSimpleToast("Error Updating Price!");
+//                          });
+//                      };
+//
+//                      $scope.toastPosition = angular.extend({},last);
+//                      $scope.getToastPosition = function() {
+//                        sanitizePosition();
+//
+//                        return Object.keys($scope.toastPosition)
+//                          .filter(function(pos) { return $scope.toastPosition[pos]; })
+//                          .join(' ');
+//                      };
+//
+//                      function sanitizePosition() {
+//                        var current = $scope.toastPosition;
+//                        last = angular.extend({},current);
+//                      }
+//
+//                      $scope.showSimpleToast = function(message) {
+//                        var pinTo = $scope.getToastPosition();
+//
+//                        $mdToast.show(
+//                          $mdToast.simple()
+//                            .textContent(message)
+//                            .position(pinTo)
+//                            .hideDelay(3000)
+//                        );
+//                      };
+//                  }],
+//                  templateUrl: 'js/partials/changeCurrentPrice.html',
+//                  parent: angular.element(document.body),
+//                  clickOutsideToClose: true,
+//                  fullscreen: false,
+//                  openFrom: '#brand',
+//                  closeTo: '#brand'
+//                });
+//            }
         });
