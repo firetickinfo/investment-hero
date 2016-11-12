@@ -7,36 +7,14 @@ var del = require('del');
 
 var appDev = 'assets/app/';
 var appProd = 'public/js/app/';
-var vendor = 'public/js/vendor';
+var nodeModules = 'public/node_modules';
 
 var tsconfig = gulpTypescript.createProject('tsconfig.json');
 
-gulp.task('build-ts', function() {
-    return gulp.src(appDev + '/**/*.ts')
-        .pipe(gulpSourcemaps.init())
-        .pipe(gulpTypescript(tsconfig))
-        .pipe(gulpSourcemaps.write())
-        .pipe(gulp.dest(appProd));
-});
-
-gulp.task('build-copy', function() {
-   return gulp.src([appDev + '**/*.html', appDev + '**/*.htm', appDev + '**/*.css'])
-       .pipe(gulp.dest(appProd));
-});
-
-gulp.task('clean', function() {
-   del(appProd + '/**/*');
-});
-
-gulp.task('vendor', function() {
+gulp.task('nodeModules', function() {
     gulp.src('node_modules/**')
-        .pipe(gulp.dest(vendor + '/'));
+        .pipe(gulp.dest(nodeModules));
 });
 
-gulp.task('watch', function() {
-   gulp.watch(appDev + '**/*.ts', ['build-ts']); 
-   gulp.watch(appDev + '**/*.{html,htm,css}', ['build-copy']); 
-});
-
-gulp.task('default', ['watch', 'build-ts', 'build-copy', 'vendor']);
-gulp.task('build', ['build-ts', 'build-copy', 'vendor']);
+gulp.task('default', ['nodeModules']);
+gulp.task('build', ['nodeModules']);
