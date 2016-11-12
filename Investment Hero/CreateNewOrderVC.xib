@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateNewOrderVC" customModule="Investment_Hero" customModuleProvider="target">
             <connections>
+                <outlet property="activitySpinner" destination="RB5-MV-TiE" id="XmB-1W-F3h"/>
                 <outlet property="nextBtn" destination="jEn-6L-CAv" id="OJZ-9z-FaO"/>
                 <outlet property="popUpView" destination="j0R-39-O7n" id="Gl2-Xf-3DQ"/>
                 <outlet property="searchBtn" destination="rnQ-Ue-UF3" id="HBu-zM-1Yq"/>
@@ -26,7 +27,7 @@
                     <rect key="frame" x="20" y="84" width="335" height="500"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="J2C-tB-uaa">
-                            <rect key="frame" x="143" y="415" width="50" height="50"/>
+                            <rect key="frame" x="98" y="415" width="140" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ej-7E-vXm">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -40,7 +41,7 @@
                                     </connections>
                                 </button>
                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEn-6L-CAv">
-                                    <rect key="frame" x="50" y="0.0" width="0.0" height="50"/>
+                                    <rect key="frame" x="90" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="kwp-6O-au7"/>
                                         <constraint firstAttribute="width" constant="50" id="skD-WC-MT5"/>
@@ -77,14 +78,23 @@
                                 <action selector="searchBtnPressed:" destination="-1" eventType="touchUpInside" id="AGZ-0i-Sq5"/>
                             </connections>
                         </button>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RB5-MV-TiE">
+                            <rect key="frame" x="214" y="163" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="9gJ-gy-cS6"/>
+                                <constraint firstAttribute="height" constant="20" id="kM8-ZM-au1"/>
+                            </constraints>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="0Y0-2v-icC" firstAttribute="top" secondItem="j0R-39-O7n" secondAttribute="top" constant="101" id="0cv-sE-VCr"/>
                         <constraint firstItem="rnQ-Ue-UF3" firstAttribute="centerX" secondItem="j0R-39-O7n" secondAttribute="centerX" id="3Y1-0W-B1F"/>
+                        <constraint firstItem="RB5-MV-TiE" firstAttribute="top" secondItem="0Y0-2v-icC" secondAttribute="bottom" constant="22" id="C2S-AN-oDP"/>
                         <constraint firstAttribute="bottom" secondItem="J2C-tB-uaa" secondAttribute="bottom" constant="35" id="IPb-Y4-HOq"/>
                         <constraint firstItem="0Y0-2v-icC" firstAttribute="centerX" secondItem="j0R-39-O7n" secondAttribute="centerX" id="Led-5C-MMC"/>
                         <constraint firstAttribute="height" constant="500" id="TVf-wO-wDY"/>
+                        <constraint firstItem="RB5-MV-TiE" firstAttribute="leading" secondItem="rnQ-Ue-UF3" secondAttribute="trailing" constant="8" id="WHE-XB-Cc4"/>
                         <constraint firstItem="rnQ-Ue-UF3" firstAttribute="top" secondItem="0Y0-2v-icC" secondAttribute="bottom" constant="17" id="rYB-Rg-250"/>
                         <constraint firstItem="J2C-tB-uaa" firstAttribute="centerX" secondItem="j0R-39-O7n" secondAttribute="centerX" id="tEy-4e-Hjh"/>
                     </constraints>

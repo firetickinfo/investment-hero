@@ -18,4 +18,7 @@ class Order {
     var takeProfitPlan : String?
     var purchasePrice : Double?
     var quantity : Double?
+    var imgLink : String? {
+        return "http://investment-hero.herokuapp.com/img/\(self.symbol!.uppercased()).jpg"
+    }
 }

@@ -46,7 +46,7 @@ class DataService {
         let newOrder = REF_ORDERS.childByAutoId()
         let data : Dictionary<String, String> = [KEY_SYMBOL : order.symbol!,
         KEY_PURCHASE_PRICE : "\(order.currentPrice!)", KEY_CURRENT_PRICE : "\(order.currentPrice!)",
-            KEY_STOP_LOSS : "\(order.stopLoss!)", KEY_TAKE_PROFIT : "\(order.takeProfit!)", KEY_QUANTITY : "123", KEY_STOP_PLAN : order.stopPlan!, KEY_TAKE_PROFIT_PLAN : order.takeProfitPlan!]
+            KEY_STOP_LOSS : "\(order.stopLoss!)", KEY_TAKE_PROFIT : "\(order.takeProfit!)", KEY_QUANTITY : "123", KEY_STOP_PLAN : order.stopPlan!, KEY_TAKE_PROFIT_PLAN : order.takeProfitPlan!, KEY_IMAGE : order.imgLink!]
         newOrder.updateChildValues(data){ (_,_) -> Void in
             completion()
         }

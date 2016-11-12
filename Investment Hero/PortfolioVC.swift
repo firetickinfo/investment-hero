@@ -123,10 +123,11 @@ extension PortfolioVC : UIViewControllerPreviewingDelegate {
 
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         if let indexPath = tableView.indexPathForRow(at: location) {
-            print(indexPath.row)
+            guard let order = UserdataService.shared.orders?[indexPath.row] else { return nil }
             //This will show the cell clearly and blur the rest of the screen for our peek.
             previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
             if let orderVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PeekOrderVC") as? PeekOrderVC {
+                orderVC.setup(withOrder: order)
                 return orderVC
             }
         }

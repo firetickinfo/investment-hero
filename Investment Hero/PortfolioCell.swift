@@ -15,6 +15,7 @@ class PortfolioCell: UITableViewCell {
     @IBOutlet weak var stopLossLbl : UILabel!
     @IBOutlet weak var takeProfitLbl : UILabel!
     @IBOutlet weak var unrealizedGainLbl : UILabel!
+    @IBOutlet weak var tickerLogo : UIImageView!
     
     private var order : Order!
     
@@ -32,6 +33,7 @@ class PortfolioCell: UITableViewCell {
     func setupCell(withOrder order : Order){
         if let symbol = order.symbol {
             symbolLbl.text = symbol
+            tickerLogo.image = UIImage(named: "\(symbol.uppercased()).jpg")
         }
         if let currPrice = order.currentPrice {
             currentPriceLbl.text = currPrice.asLocaleCurrency
@@ -49,6 +51,7 @@ class PortfolioCell: UITableViewCell {
                 takeProfitLbl.text = "- \(unrealizedGain.asLocaleCurrency)"
             }
         }
+        
     }
 
 }

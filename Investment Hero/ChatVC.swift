@@ -34,6 +34,10 @@ final class ChatVC: JSQMessagesViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.addMessage(withId: "123567", name: "YHack", text: "Welcome to Investment Hero, I'm here to help you. Go ahead ask me a question!")
+    }
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
         return messages[indexPath.item]
     }
