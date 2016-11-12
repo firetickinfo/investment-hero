@@ -74,15 +74,105 @@ angular.module('dangerZone')
             
         })
         
-        .controller("updatePricesCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $stateParams, $http, $mdDialog, $firebaseObject) {
+        .controller("updatePricesCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $stateParams, $http, $mdDialog, $firebaseObject, $interval) {
+            var interval;
+            
             $scope.$root.progress = true;
+            $scope.simulation = false;
             
             var ref = firebase.database().ref().child("orders");
             var syncObject = $firebaseObject(ref);
                 
-            syncObject.$bindTo($scope.$root, "orders");
-            $scope.$root.progress = false;
+            syncObject.$bindTo($scope, "orders").then(function(unbind) {
+                $scope.$root.progress = false;
+                $scope.loaded = true;
+            });
             
+            $scope.numOfKeys = function() {
+                var counter = 0;
+                for (var key in syncObject) {
+                    if (key.indexOf('-') == 0) {
+                        counter = counter + 1;
+                    }
+                }
+                
+                return counter;
+            }
+    
+            $scope.startUpdating = function() {
+                interval = $interval($scope.updateTime, 1000);
+                $scope.simulation = true;
+            }
+            
+            $scope.stopUpdating = function() {
+                $scope.simulation = false;
+                $interval.cancel(interval);
+            }
+              
+              var last = {
+                  bottom: true,
+                  top: false,
+                  left: false,
+                  right: true
+              };
+              
+              $scope.toastPosition = angular.extend({},last);
+              $scope.getToastPosition = function() {
+                sanitizePosition();
+
+                return Object.keys($scope.toastPosition)
+                  .filter(function(pos) { return $scope.toastPosition[pos]; })
+                  .join(' ');
+              };
+
+              function sanitizePosition() {
+                var current = $scope.toastPosition;
+                last = angular.extend({},current);
+              }
+
+              $scope.showSimpleToast = function(message) {
+                var pinTo = $scope.getToastPosition();
+
+                $mdToast.show(
+                  $mdToast.simple()
+                    .textContent(message)
+                    .position(pinTo)
+                    .hideDelay(3000)
+                );
+              };
+            
+            $scope.updateTime = function() {
+                for (var key in syncObject) {
+                    if (key.indexOf('-') == 0) {
+                        var number = $scope.orders[key].current_price;
+                        var max = number * 1.03;
+                        var min = number * 0.97;
+                        
+                        var newPrice = Math.floor(Math.random() * (max - min + 1) + min);
+                        
+                        $scope.orders[key].current_price = "" + newPrice;
+                        
+                        console.log(newPrice + " " + $scope.orders[key].take_profit + " " + $scope.orders[key].stop_loss)
+                        
+                        if (newPrice >= parseFloat($scope.orders[key].take_profit)) {
+                            $scope.showSimpleToast($scope.orders[key].symbol + " just hit the Take Profit mark!");
+                        }
+                        
+                        if (newPrice <= parseFloat($scope.orders[key].stop_loss)) {
+                            $scope.showSimpleToast($scope.orders[key].symbol + " just hit the Stop Loss mark!");
+                        }
+                    }
+                }
+            }
+            
+            $scope.remove = function(objKey) {
+                for (var key in syncObject) {
+                    if (key == objKey) {
+                        delete $scope.orders[objKey];
+                    }
+                }
+            }
+                        
 //            $scope.changeCurrentPrice = function(item) {                                
 //                var id = Object.keys(syncObject).filter(function(key) {return syncObject[key] === item})[0];
 //                
