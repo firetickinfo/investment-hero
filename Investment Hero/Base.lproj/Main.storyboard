@@ -4,12 +4,12 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Talk-->
         <scene sceneID="kuz-aa-OcD">
             <objects>
                 <viewController id="POK-Ee-fHe" customClass="ConversationVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,13 +50,13 @@
                             <constraint firstItem="Upc-F0-2LX" firstAttribute="top" secondItem="P3Y-YJ-WzR" secondAttribute="bottom" id="Zrk-MT-qnt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="LCo-fi-8VW"/>
+                    <tabBarItem key="tabBarItem" title="Talk" id="LCo-fi-8VW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFx-RD-Gnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-146" y="410"/>
         </scene>
-        <!--Item 1-->
+        <!--Portfolio-->
         <scene sceneID="r5F-PW-S5N">
             <objects>
                 <viewController id="ZKO-H0-E0e" customClass="PortfolioVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,6 +68,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iRT-yt-Dcd">
+                                <rect key="frame" x="20" y="88" width="335" height="530"/>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PortfolioCell" rowHeight="97" id="m5c-X8-u1e" customClass="PortfolioCell" customModule="Investment_Hero" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="97"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m5c-X8-u1e" id="1H2-s2-M5y">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="97"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHM-Ll-QV4" customClass="MaterialView" customModule="Investment_Hero" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="319" height="80.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="WHM-Ll-QV4" firstAttribute="top" secondItem="1H2-s2-M5y" secondAttribute="topMargin" id="B9g-0K-eWz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="WHM-Ll-QV4" secondAttribute="bottom" id="DUb-Qz-ebK"/>
+                                                <constraint firstItem="WHM-Ll-QV4" firstAttribute="leading" secondItem="1H2-s2-M5y" secondAttribute="leadingMargin" id="Wb0-Ms-AYI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="WHM-Ll-QV4" secondAttribute="trailing" id="nc5-o3-hbi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVY-Gh-w3p" customClass="MaterialView" customModule="Investment_Hero" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="60"/>
                                 <subviews>
@@ -92,12 +119,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="iRT-yt-Dcd" firstAttribute="top" secondItem="ZVY-Gh-w3p" secondAttribute="bottom" constant="8" id="CBB-uN-jv4"/>
                             <constraint firstItem="ZVY-Gh-w3p" firstAttribute="top" secondItem="ei2-nQ-TyF" secondAttribute="bottom" id="PVh-rG-1kb"/>
                             <constraint firstAttribute="trailing" secondItem="ZVY-Gh-w3p" secondAttribute="trailing" id="cb3-Md-IBB"/>
+                            <constraint firstAttribute="trailing" secondItem="iRT-yt-Dcd" secondAttribute="trailing" constant="20" id="teI-FB-5Tl"/>
+                            <constraint firstItem="iRT-yt-Dcd" firstAttribute="leading" secondItem="MN4-yd-8y3" secondAttribute="leading" constant="20" id="wCy-nx-TvQ"/>
+                            <constraint firstItem="cIs-hV-Wta" firstAttribute="top" secondItem="iRT-yt-Dcd" secondAttribute="bottom" id="ybP-er-tC2"/>
                             <constraint firstItem="ZVY-Gh-w3p" firstAttribute="leading" secondItem="MN4-yd-8y3" secondAttribute="leading" id="zTM-Rq-tk0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="S3N-P5-gKI"/>
+                    <tabBarItem key="tabBarItem" title="Portfolio" id="S3N-P5-gKI"/>
+                    <connections>
+                        <outlet property="tableView" destination="iRT-yt-Dcd" id="Tl1-ei-CJL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Id1-XO-tDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
