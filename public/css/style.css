@@ -13,10 +13,11 @@ Author URI: https://eMoosavi.com
 
 html, body {
     position: relative;
-    background: #e54b4b url('../img/bg.jpg') no-repeat center;
+    background: #fff url(../img/bg.jpg) no-repeat center;
+    background-size: cover;
     overflow-x: hidden;
     font-family: 'Lato';
-    color: #fff;
+    color: #333;
 }
 
 a {
@@ -376,6 +377,10 @@ md-icon {
     outline: none;
 }
 
+.mdi-fix {
+    height: auto !important;
+}
+
 .mdi-space {
     margin-right: 10px;
 }
@@ -398,8 +403,8 @@ md-icon {
 
 .mdi-25px-fix {
     font-size: 25px !important;
-    margin-top: 12px !important;
-    margin-left: -5px !important;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
     font-weight: 200 !important;
 }
 

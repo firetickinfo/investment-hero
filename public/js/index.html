@@ -1,50 +1,45 @@
-    <div class="center" id="home-intro" ng-init="progress = false">
-        <h1>Bloody Test</h1>
-        <div style="display: table; margin-top: 20px;" class="appear">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-34 -27 100 100" style="enable-background:new -34 -27 100 100; width: 65px; float: left; margin-top: 7.5px;" class="svgLogo" xml:space="preserve">
-                <style type="text/css">
-                    .st0{fill:#FFFFFF;}
-                    .st1{fill:none;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}
-                </style>
-                <path id="XMLID_5_" class="st0" d="M0.3,31.6c0,0-31.4-22.4-30.8-40.5c0-0.1,0-0.2,0-0.3c0-0.3,0-0.5,0-0.8c0-9.4,7-17,15.7-17
-                    c6.9,0,12.9,4.8,15,11.6c0.1-0.2-0.1-0.2,0,0C2.4-22.2,8.5-27,15.4-27c8.7,0,15.7,7.6,15.7,17c0,0.3,0,0.5,0,0.8c0,0.1,0,0.2,0,0.3
-                    C31.8,9.2,0.3,31.6,0.3,31.6z"/>
-                <path id="XMLID_4_" class="st1" d="M36.8-21.2h12.6c5.1,0,9.2,4.1,9.2,9.2v73.4c0,5.1-4.1,9.2-9.2,9.2h-65.7c-5.1,0-9.2-4.1-9.2-9.2
-                    V19.1"/>
-                <path id="XMLID_3_" class="st0" d="M45.3,60.9h-56.1c-1.7,0-3.1-1.4-3.1-3.1v0c0-1.7,1.4-3.1,3.1-3.1h56.1c1.7,0,3.1,1.4,3.1,3.1v0
-                    C48.4,59.5,47,60.9,45.3,60.9z"/>
-                <path id="XMLID_2_" class="st0" d="M46.1,44.1H9.3c-1.7,0-3.1-1.4-3.1-3.1v0c0-1.7,1.4-3.1,3.1-3.1h36.8c1.7,0,3.1,1.4,3.1,3.1v0
-                    C49.2,42.8,47.8,44.1,46.1,44.1z"/>
-                <path id="XMLID_1_" class="st0" d="M46.5,26.5H29.8c-1.7,0-3.1-1.4-3.1-3.1v0c0-1.7,1.4-3.1,3.1-3.1h16.8c1.7,0,3.1,1.4,3.1,3.1v0
-                    C49.6,25.2,48.2,26.5,46.5,26.5z"/>
-            </svg>
-            
-            <p class="alignLeft">Don’t you just hate it when you get your blood test results back and you can’t understand a thing?</p>
-        </div>
-        
-        <form name="signInForm" style="margin-top: 20px;" class="flex-container appear">
-            <input type="file" class="flex-item" id="take-picture" ng-model="files" onchange="angular.element(this).scope().changed(event)" style="background: #fff; color: #000;" accept="image/*">
-                                    
-            <md-button class="md-raised flex-item" onclick="event.preventDefault()" ng-click="analyze()">
-                <md-icon class="mdi mdi-auto-fix mdi-18px"></md-icon>
-                Analyze
-            </md-button>
-        </form>
-        
-        <div style="width: 100%; text-align: left;">
-            <a href="img/samples.zip">
-                <md-button class="md-raised md-warn" style="margin: 10px 0; width: 100%;">
-                    <md-icon class="mdi mdi-folder-multiple-image mdi-18px"></md-icon>
-                    Download Sample Test Photos to Try
-                </md-button>
-            </a>
-        </div>
-        
-        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" ng-hide="!progress" style="display: table; width: 100%; margin: 0; margin-top: 20px; padding: 10px 20px; text-align: left;" md-theme-watch>
-            <p class="noSpace">
-                <md-progress-circular md-mode="indeterminate" md-diameter="30" style="float: left;"></md-progress-circular>
-                <span style="font-weight: bold; margin-left: 30px;">{{progressIndex+1}}/{{PROGRESS_STEPS.length}}</span> {{PROGRESS_STEPS[progressIndex]}}
-            </p>
-        </md-card>
-    </div>
+<div class="alignCenter">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000; max-width: 500px;" xml:space="preserve">
+    <polygon id="XMLID_1_" style="fill:#62BFAD;" points="1179.657,1741.308 820.328,1741.308 744.585,1827.434 820.328,1791.796 
+        1179.657,1791.796 1255.4,1827.434 "/>
+    <g id="XMLID_8_">
+        <path id="XMLID_11_" style="fill:#62BFAD;" d="M825.916,478.512c-19.952,0-33.418-14.316-36.328-32.441l-33.768,7.623
+            c3.331,17.512,10.628,34.674,24.698,46.169c7.353,6.01,16.185,10.056,25.573,12.401l-3.378,26.177h44.364l-3.275-25.414
+            c9.833-1.956,19.269-5.66,27.115-11.566c25.08-18.871,30.676-58.291,17.003-84.818c-4.595-8.935-10.97-15.97-19.11-21.121
+            c-8.148-5.151-20.716-10.135-37.711-14.96c-16.995-4.817-27.687-9.444-32.099-13.887c-4.913-4.968-6.558-12.425-4.118-18.855
+            c4.396-11.614,19.452-14.611,30.986-14.237c6.439,0.207,12.981,2.019,17.909,5.97c4.213,3.37,6.916,8.068,8.617,13.092l35.43-7.011
+            c-3.172-14.428-10.398-27.91-23.736-36.344c-6.312-3.99-13.426-6.614-20.811-8.323l3.8-29.444h-44.364l3.736,28.951
+            c-4.499,0.954-8.919,2.178-13.108,4.006c-41.042,17.902-43.522,77.028-8.092,101.479c11.892,8.204,26.272,11.868,40.112,15.954
+            c12.258,3.633,28.005,7.313,33.156,19.992c3.935,9.69,0.111,20.731-7.17,28.029C845.638,475.65,837.156,478.512,825.916,478.512z"
+            />
+        <path id="XMLID_14_" style="fill:#62BFAD;" d="M1679.02,381.282l56.332,394.824h-63.389
+            c-26.729-191.021-77.953-480.285-173.273-577.149C1448.702,114.945,1238.745,4.3,1009.924,0.38V0c-3.754,0-7.46,0.166-11.214,0.19
+            C994.956,0.166,991.273,0,987.496,0v0.38C758.674,4.3,548.694,114.945,498.729,198.956
+            c-95.32,96.865-146.568,386.128-173.273,577.149h-60.799l56.332-394.824c0,0-555.386,681.023-115.254,807.705l17.581-123.261
+            l75.315,49.49c4.229,204.516,80.234,303.186,80.234,303.186l246.997,581.426l-114.28-596.014l188.027,102.401l297.413-182.088
+            l300.739,182.088l188.027-102.401l-114.256,596.014l246.973-581.45c0,0,75.529-97.981,80.186-301.428l77.976-51.248l17.581,123.261
+            C2234.406,1062.305,1679.02,381.282,1679.02,381.282z M825.503,229.424c98.625,0,178.578,79.953,178.578,178.578
+            c0,98.633-79.953,178.586-178.578,178.586c-98.633,0-178.586-79.953-178.586-178.586
+            C646.917,309.377,726.869,229.424,825.503,229.424z M507.805,1219.469c-69.922-22.072-126.967-170.683-32.003-140.961
+            c94.94,29.722,265.79,196.034,265.79,196.034S577.703,1241.565,507.805,1219.469z M1213.312,716.201v204.779
+            c0,4.396-3.561,7.949-7.949,7.949s-7.949-3.553-7.949-7.949V716.765c-1.328-0.429-2.639-0.938-3.903-1.606l-107.37-56.884v262.705
+            c0,4.396-3.553,7.949-7.949,7.949c-4.388,0-7.949-3.553-7.949-7.949v-260.9L954.971,784.881v136.098
+            c0,4.396-3.553,7.949-7.949,7.949c-4.388,0-7.949-3.553-7.949-7.949V794.77c-4.849,0.827-9.952,0.183-14.579-2.114L813.19,737.512
+            v183.467c0,4.396-3.561,7.949-7.949,7.949c-4.388,0-7.949-3.553-7.949-7.949V735.867l-119.834,100.12
+            c-4.459,3.736-9.889,5.549-15.278,5.549c-6.82,0-13.593-2.909-18.315-8.553c-8.442-10.111-7.091-25.151,3.013-33.593
+            l136.456-113.999c7.25-6.073,17.401-7.273,25.875-3.076l120.462,59.682l124.333-134.635c7.345-7.965,19.118-9.952,28.688-4.897
+            l113.419,60.088l121.416-196.504c6.932-11.208,21.638-14.674,32.822-7.758c11.208,6.924,14.674,21.622,7.758,32.822
+            l-133.149,215.502C1222.135,711.185,1217.978,714.38,1213.312,716.201z M1489.567,1219.469
+            c-69.875,22.096-233.787,55.073-233.787,55.073s170.85-166.312,265.79-196.034
+            C1616.534,1048.81,1559.49,1197.421,1489.567,1219.469z"/>
+    </g>
+    </svg>
+    
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-raised md-warn" ui-sref="updatePrices">
+          <md-icon class="mdi mdi-arrow-right mdi-fix white"></md-icon>
+          Start
+      </md-button>
+    </section>
+</div>

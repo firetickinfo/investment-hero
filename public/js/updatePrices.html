@@ -1,0 +1,12 @@
+<md-card>
+    <md-list>
+        <md-list-item ng-repeat="order in orders" class="noright">
+            <img alt="{{order.symbol}}" ng-src="{{order.img}}" class="md-avatar" />
+            <p>{{order.symbol}}</p>
+            <p class="md-secondary">{{order.current_price | currency}}</p>
+            <md-button class="md-secondary">
+                <md-icon class="mdi mdi-pencil mdi-fix"></md-icon>
+            </md-button>
+        </md-list-item>
+    </md-list>
+</md-card>
