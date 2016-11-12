@@ -16,4 +16,6 @@ class Order {
     var unrealizedGain : Double?
     var stopPlan : String?
     var takeProfitPlan : String?
+    var purchasePrice : Double?
+    var quantity : Double?
 }
