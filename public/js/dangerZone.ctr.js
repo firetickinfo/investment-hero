@@ -1,3 +1,6 @@
+var serverURI = "https://investment-hero.herokuapp.com";
+var getOrders = serverURI + "/getOrders";
+
 angular.module('dangerZone')
         .config(function($mdThemingProvider) {
           $mdThemingProvider.definePalette('hero', {
@@ -71,8 +74,15 @@ angular.module('dangerZone')
             
         })
         
-        .controller("resultsCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $stateParams, $http, $mdDialog) {
-            
+        .controller("updatePricesCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $stateParams, $http, $mdDialog) {
+            $http.get(getOrders).
+                success(function(data, status, headers, config) {
+                    console.log(data);
+                    $scope.orders = data.body;
+                })
+                .error(function(data, status, headers, config) {
+                    console.error(data);
+                });
         });
 
 //var appearElements = document.querySelectorAll('.appear');
