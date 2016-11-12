@@ -17,21 +17,21 @@ admin.initializeApp({
 });
 
 var db = admin.database();
-var ref = db.ref("test");
+var ordersRef = db.ref("orders");
 
 router.get('/', function (req, res, next) {
-    var usersRef = ref.child("users");
-    usersRef.set({
-      alanisawesome: {
-        date_of_birth: "June 23, 1912",
-        full_name: "Alan Turing"
-      },
-      gracehop: {
-        date_of_birth: "December 9, 1906",
-        full_name: "Grace Hopper"
-      }
-    });
-
+//    var usersRef = ref.child("users");
+//    usersRef.set({
+//      alanisawesome: {
+//        date_of_birth: "June 23, 1912",
+//        full_name: "Alan Turing"
+//      },
+//      gracehop: {
+//        date_of_birth: "December 9, 1906",
+//        full_name: "Grace Hopper"
+//      }
+//    });
+    
     res.render('index');
 });
 
@@ -49,6 +49,18 @@ router.get('/GetEndOfDayData/:symbol', function (req, res, next) {
             });
         });
       }
+    });
+});
+
+router.get('/getOrders', function (req, res, next) {
+    ordersRef.on("value", function(snapshot) {
+      res.status(200).json({
+        body: snapshot.val()
+      });
+    }, function (errorObject) {
+      res.status(500).json({
+        error: errorObject.code
+      });
     });
 });
 

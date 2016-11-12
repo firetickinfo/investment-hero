@@ -22,8 +22,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/1.0.6/flexibility.js"></script>
     <![endif]-->
 </head>
-<body ng-app="dangerZone" ng-controller="dangerZoneCtrl" ng-init="picURL = 'http://www.doghouseboxing.com/Media/ReM_Donaire_Blood_2.jpg'">
-    <div ui-view class="anim-in-out anim-fade" data-anim-speed="400" data-anim-sync="true"></div>
+<body ng-app="dangerZone" ng-controller="dangerZoneCtrl">
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon class="mdi mdi-menu mdi-25px-fix white"></md-icon>
+        </md-button>
+        
+        <h2>
+          <span>Investment Hero</span>
+        </h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    
+    <div class="container" style="margin-top: 30px;">
+        <div ui-view class="anim-in-out anim-fade" data-anim-speed="400" data-anim-sync="true"></div>
+    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
     <script src='node_modules/angular-animate/angular-animate.js'></script>
