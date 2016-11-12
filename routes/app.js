@@ -44,7 +44,7 @@ router.get('/GetEndOfDayData/:symbol', function (req, res, next) {
                 fail = data.ArrayOfEndOfDayPriceCollection.EndOfDayPriceCollection.Prices.EndOfDayPrice.Message.toString().includes("No Trades found for");
             }
             res.status(200).json({
-                message: fail ? "Failed" : "Success",
+                success: fail ? false : true,
                 body: data.ArrayOfEndOfDayPriceCollection.EndOfDayPriceCollection
             });
         });
