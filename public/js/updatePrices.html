@@ -1,7 +1,7 @@
 <md-card>
     <md-list>
-        <md-list-item ng-repeat="order in orders" class="noright">
-            <img alt="{{order.symbol}}" ng-src="{{order.img}}" class="md-avatar" />
+        <md-list-item ng-repeat="order in orders track by $index" class="noright" ng-click="changeCurrentPrice($index)">
+            <img alt="{{order.symbol}}" ng-src="img/{{order.symbol}}.jpg" class="md-avatar stock-icon" />
             <p>{{order.symbol}}</p>
             <p class="md-secondary">{{order.current_price | currency}}</p>
             <md-button class="md-secondary">

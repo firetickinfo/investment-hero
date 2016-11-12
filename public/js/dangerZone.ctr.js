@@ -83,17 +83,73 @@ angular.module('dangerZone')
                 .error(function(data, status, headers, config) {
                     console.error(data);
                 });
-        });
+            
+            $scope.changeCurrentPrice = function(index) {
+                console.log($scope.orders[Object.keys($scope.orders)[index]].symbol);
+                
+                var item = $scope.orders[Object.keys($scope.orders)[index]];
+                var id = Object.keys($scope.orders)[index];
+                
+                $mdDialog.show({
+                  controller: ['$rootScope', '$scope', '$mdDialog', '$mdToast', function ($rootScope, $scope, $mdDialog, $mdToast) {
+                      $scope.item = item;
+                      
+                      $scope.closeDialog = function() {
+                          $mdDialog.hide();
+                      };
 
-//var appearElements = document.querySelectorAll('.appear');
-//var appearElementsArray = Array.prototype.slice.call(appearElements, 0);
-//
-//var timeoutDelay = 1000;
-//appearElementsArray.forEach(function(el) {
-//    setTimeout(function(){
-//        el.classList.add('appear-after');
-//        el.classList.remove('appear');
-//    }, timeoutDelay);
-//    
-//    timeoutDelay = timeoutDelay + 1000;
-//});
+                      var last = {
+                          bottom: true,
+                          top: false,
+                          left: false,
+                          right: true
+                      };
+                      
+                      $scope.updatePrice = function() {
+                          console.log($scope.newPrice);
+                          console.log(id);
+                          
+                          $http.post('https://investment-hero.herokuapp.com/changeCurrentPrice?id=' + id + '&newPrice=' + $scope.newPrice).
+                                success(function(data, status, headers, config) {
+                                    
+                                  })
+                                  .error(function(data, status, headers, config) {
+                                      // called asynchronously if an error occurs
+                                      // or server returns response with an error status.
+                          });
+                      };
+
+                      $scope.toastPosition = angular.extend({},last);
+                      $scope.getToastPosition = function() {
+                        sanitizePosition();
+
+                        return Object.keys($scope.toastPosition)
+                          .filter(function(pos) { return $scope.toastPosition[pos]; })
+                          .join(' ');
+                      };
+
+                      function sanitizePosition() {
+                        var current = $scope.toastPosition;
+                        last = angular.extend({},current);
+                      }
+
+                      $scope.showSimpleToast = function(message) {
+                        var pinTo = $scope.getToastPosition();
+
+                        $mdToast.show(
+                          $mdToast.simple()
+                            .textContent(message)
+                            .position(pinTo)
+                            .hideDelay(3000)
+                        );
+                      };
+                  }],
+                  templateUrl: 'js/partials/changeCurrentPrice.html',
+                  parent: angular.element(document.body),
+                  clickOutsideToClose: true,
+                  fullscreen: false,
+                  openFrom: '#brand',
+                  closeTo: '#brand'
+                });
+            }
+        });

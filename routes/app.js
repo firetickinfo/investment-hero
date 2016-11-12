@@ -64,4 +64,17 @@ router.get('/getOrders', function (req, res, next) {
     });
 });
 
+router.get('/changeCurrentPrice', function (req, res, next) {
+    
+    res.status(200).json({
+        body: req.params.symbol,
+        query: req.query
+    });
+    
+    var childRef = ordersRef.child(req.query.id);
+    childRef.update({
+      "current_price": req.query.newPrice
+    });
+});
+
 module.exports = router;
