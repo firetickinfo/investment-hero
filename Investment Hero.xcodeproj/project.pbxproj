@@ -17,6 +17,8 @@
 		46AE5E231DD68CE3009ABD5F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E221DD68CE3009ABD5F /* Constants.swift */; };
 		46AE5E261DD68E11009ABD5F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E251DD68E11009ABD5F /* MaterialView.swift */; };
 		46AE5E291DD69354009ABD5F /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E281DD69354009ABD5F /* PortfolioCell.swift */; };
+		46AE5E2B1DD696D9009ABD5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46AE5E2A1DD696D9009ABD5F /* GoogleService-Info.plist */; };
+		46AE5E2D1DD6975C009ABD5F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E2C1DD6975C009ABD5F /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		46AE5E221DD68CE3009ABD5F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		46AE5E251DD68E11009ABD5F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		46AE5E281DD69354009ABD5F /* PortfolioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
+		46AE5E2A1DD696D9009ABD5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46AE5E2C1DD6975C009ABD5F /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		4A33E5327D6CC78CB903FA44 /* Pods-Investment Hero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Investment Hero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Investment Hero/Pods-Investment Hero.release.xcconfig"; sourceTree = "<group>"; };
 		CBDA497E81D49ABA36EDE727 /* Pods_Investment_Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Investment_Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +121,7 @@
 		46AE5E1E1DD68975009ABD5F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46AE5E2A1DD696D9009ABD5F /* GoogleService-Info.plist */,
 				46AE5E101DD6889A009ABD5F /* Assets.xcassets */,
 				46AE5E151DD6889A009ABD5F /* Info.plist */,
 				46AE5E091DD6889A009ABD5F /* AppDelegate.swift */,
@@ -128,6 +133,7 @@
 		46AE5E1F1DD6897A009ABD5F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				46AE5E2C1DD6975C009ABD5F /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46AE5E141DD6889A009ABD5F /* LaunchScreen.storyboard in Resources */,
+				46AE5E2B1DD696D9009ABD5F /* GoogleService-Info.plist in Resources */,
 				46AE5E111DD6889A009ABD5F /* Assets.xcassets in Resources */,
 				46AE5E0F1DD6889A009ABD5F /* Main.storyboard in Resources */,
 			);
@@ -281,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46AE5E0C1DD6889A009ABD5F /* PortfolioVC.swift in Sources */,
+				46AE5E2D1DD6975C009ABD5F /* DataService.swift in Sources */,
 				46AE5E211DD68A50009ABD5F /* ConversationVC.swift in Sources */,
 				46AE5E261DD68E11009ABD5F /* MaterialView.swift in Sources */,
 				46AE5E0A1DD6889A009ABD5F /* AppDelegate.swift in Sources */,
