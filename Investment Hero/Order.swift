@@ -13,7 +13,11 @@ class Order {
     var currentPrice : Double?
     var stopLoss : Double?
     var takeProfit : Double?
-    var unrealizedGain : Double?
+    var unrealizedGain : Double? {
+        let bookValue = purchasePrice! * quantity!
+        let marketValue = currentPrice! * quantity!
+        return marketValue - bookValue
+    }
     var stopPlan : String?
     var takeProfitPlan : String?
     var purchasePrice : Double?

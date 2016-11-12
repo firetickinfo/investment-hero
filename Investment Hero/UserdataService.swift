@@ -30,7 +30,6 @@ class UserdataService {
         order.currentPrice = currPrice
         order.stopLoss = stopLoss
         order.takeProfit = takeprofit
-        order.unrealizedGain = unrealizedGain
         if self.orders != nil {
             self.orders?.append(order)
         } else {
@@ -38,6 +37,15 @@ class UserdataService {
             self.orders?.append(order)
         }
     }
+    
+    func calculateTotalPortfolioValue() -> Double{
+        var runningTotal : Double = 0.0
+        for order in orders! {
+            runningTotal = runningTotal + order.unrealizedGain!
+        }
+        return runningTotal
+    }
+    
     func addOrder(withOrder order : Order) {
         if self.orders != nil {
             self.orders?.append(order)

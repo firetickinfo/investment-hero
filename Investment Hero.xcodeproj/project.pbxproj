@@ -11,6 +11,7 @@
 		4615D5341DD76C05008E59FE /* WelcomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615D5331DD76C05008E59FE /* WelcomePageVC.swift */; };
 		4615D5361DD77C73008E59FE /* TutorialScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615D5351DD77C73008E59FE /* TutorialScreenVC.swift */; };
 		4615D5381DD77D29008E59FE /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615D5371DD77D29008E59FE /* MaterialButton.swift */; };
+		4615D53A1DD7BACA008E59FE /* TipsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615D5391DD7BACA008E59FE /* TipsVC.swift */; };
 		465858A81DD6E7A000649B0A /* AnimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465858A71DD6E7A000649B0A /* AnimationEngine.swift */; };
 		465858AA1DD6E7FC00649B0A /* SymbolCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465858A91DD6E7FC00649B0A /* SymbolCard.xib */; };
 		465858AC1DD6E86C00649B0A /* SymbolCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465858AB1DD6E86C00649B0A /* SymbolCard.swift */; };
@@ -46,6 +47,7 @@
 		4615D5331DD76C05008E59FE /* WelcomePageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageVC.swift; sourceTree = "<group>"; };
 		4615D5351DD77C73008E59FE /* TutorialScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialScreenVC.swift; sourceTree = "<group>"; };
 		4615D5371DD77D29008E59FE /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		4615D5391DD7BACA008E59FE /* TipsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsVC.swift; sourceTree = "<group>"; };
 		465858A71DD6E7A000649B0A /* AnimationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationEngine.swift; sourceTree = "<group>"; };
 		465858A91DD6E7FC00649B0A /* SymbolCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymbolCard.xib; sourceTree = "<group>"; };
 		465858AB1DD6E86C00649B0A /* SymbolCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolCard.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				465858B31DD75BD100649B0A /* PeekOrderVC.swift */,
 				4615D5331DD76C05008E59FE /* WelcomePageVC.swift */,
 				4615D5351DD77C73008E59FE /* TutorialScreenVC.swift */,
+				4615D5391DD7BACA008E59FE /* TipsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46AE5E3A1DD6BD1F009ABD5F /* CreateNewOrderVC.swift in Sources */,
+				4615D53A1DD7BACA008E59FE /* TipsVC.swift in Sources */,
 				46AE5E321DD69A96009ABD5F /* ChatVC.swift in Sources */,
 				465858A81DD6E7A000649B0A /* AnimationEngine.swift in Sources */,
 				465858B21DD70AF500649B0A /* PreviewOrderCard.swift in Sources */,

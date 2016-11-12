@@ -12,8 +12,8 @@ class TutorialScreenVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = COLOUR_SCHEME
     }
 
     override func didReceiveMemoryWarning() {

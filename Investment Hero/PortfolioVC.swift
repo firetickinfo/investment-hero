@@ -2,6 +2,8 @@ import UIKit
 import Firebase
 class PortfolioVC: UIViewController {
 
+    @IBOutlet weak var totalPortfolioValue : UILabel!
+    
     @IBOutlet weak var tableView : UITableView! {
         didSet {
             tableView.delegate = self
@@ -15,7 +17,7 @@ class PortfolioVC: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         //Login to Firebase
         DataService.shared.signInAnonymously()
-        
+        totalPortfolioValue.text = ""
         registerForPreviewing(with: self, sourceView: tableView)
         
     }
@@ -54,6 +56,7 @@ class PortfolioVC: UIViewController {
                     UserdataService.shared.addOrder(withOrder: newOrder)
                 }
             }
+            self.totalPortfolioValue.text = UserdataService.shared.calculateTotalPortfolioValue().asLocaleCurrency
             self.tableView.reloadData()
         })
     }

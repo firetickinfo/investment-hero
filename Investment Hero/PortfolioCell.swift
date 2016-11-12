@@ -46,9 +46,11 @@ class PortfolioCell: UITableViewCell {
         }
         if let unrealizedGain = order.unrealizedGain {
             if unrealizedGain > 0 {
-                takeProfitLbl.text = "+ \(unrealizedGain.asLocaleCurrency)"
+                unrealizedGainLbl.text = "+ \(unrealizedGain.asLocaleCurrency)"
+                unrealizedGainLbl.textColor = COLOUR_SCHEME
             } else {
-                takeProfitLbl.text = "- \(unrealizedGain.asLocaleCurrency)"
+                unrealizedGainLbl.text = "\(unrealizedGain.asLocaleCurrency)"
+                unrealizedGainLbl.textColor = UIColor.red
             }
         }
         

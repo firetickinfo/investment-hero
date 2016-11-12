@@ -189,8 +189,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVY-Gh-w3p" customClass="MaterialView" customModule="Investment_Hero" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="portfolio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkP-7V-a8k">
-                                        <rect key="frame" x="139.5" y="20" width="96" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="portfolio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkP-7V-a8k">
+                                        <rect key="frame" x="20" y="20" width="96" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="96" id="4Hi-90-0R2"/>
                                             <constraint firstAttribute="height" constant="21" id="Z2Y-nx-Yk5"/>
@@ -199,12 +199,24 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+$1,000,000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRA-ef-OoV">
+                                        <rect key="frame" x="263" y="19.5" width="96" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="DbS-wy-4g7"/>
+                                            <constraint firstAttribute="height" constant="21" id="WQN-1j-0Gn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.38039215686274508" green="0.74901960784313726" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="FkP-7V-a8k" firstAttribute="leading" secondItem="ZVY-Gh-w3p" secondAttribute="leading" constant="20" id="3Hz-Uc-Kwz"/>
                                     <constraint firstItem="FkP-7V-a8k" firstAttribute="centerY" secondItem="ZVY-Gh-w3p" secondAttribute="centerY" id="3XN-te-sEF"/>
                                     <constraint firstAttribute="height" constant="60" id="GIF-A7-mN1"/>
-                                    <constraint firstItem="FkP-7V-a8k" firstAttribute="centerX" secondItem="ZVY-Gh-w3p" secondAttribute="centerX" id="nED-zv-yME"/>
+                                    <constraint firstAttribute="trailing" secondItem="jRA-ef-OoV" secondAttribute="trailing" constant="16" id="Kik-qu-2gC"/>
+                                    <constraint firstItem="jRA-ef-OoV" firstAttribute="centerY" secondItem="ZVY-Gh-w3p" secondAttribute="centerY" id="yhf-6J-88w"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -222,6 +234,7 @@
                     <tabBarItem key="tabBarItem" title="Portfolio" id="S3N-P5-gKI"/>
                     <connections>
                         <outlet property="tableView" destination="iRT-yt-Dcd" id="Tl1-ei-CJL"/>
+                        <outlet property="totalPortfolioValue" destination="jRA-ef-OoV" id="hrE-ne-QXg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Id1-XO-tDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -364,10 +377,10 @@
             </objects>
             <point key="canvasLocation" x="-2145" y="81"/>
         </scene>
-        <!--Tutorial ScreenVC-->
+        <!--TipsVC-->
         <scene sceneID="6VC-qe-fPs">
             <objects>
-                <viewController storyboardIdentifier="page1ViewController" id="YgJ-bI-ffN" customClass="TutorialScreenVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page1ViewController" id="YgJ-bI-ffN" customClass="TipsVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uvT-BO-KqC"/>
                         <viewControllerLayoutGuide type="bottom" id="yem-Q2-1BE"/>
@@ -376,21 +389,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLA-Gj-L6v">
-                                <rect key="frame" x="16" y="80" width="343" height="374"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLA-Gj-L6v" customClass="MaterialView" customModule="Investment_Hero" customModuleProvider="target">
+                                <rect key="frame" x="16" y="146.5" width="343" height="374"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k12-tb-csL">
+                                        <rect key="frame" x="20" y="20" width="303" height="334"/>
+                                        <string key="text">Fundamental analysis looks at a company’s earnings, earnings growth, sales, profit margins, and return on equity among other things. It helps narrow down your choices so that you are only dealing with quality stocks.</string>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="k12-tb-csL" firstAttribute="top" secondItem="YLA-Gj-L6v" secondAttribute="top" constant="20" id="3Lz-tP-rwJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="k12-tb-csL" secondAttribute="trailing" constant="20" id="4Md-UP-ndV"/>
                                     <constraint firstAttribute="height" constant="374" id="5lF-DR-ZKg"/>
+                                    <constraint firstItem="k12-tb-csL" firstAttribute="leading" secondItem="YLA-Gj-L6v" secondAttribute="leading" constant="20" id="8Bq-YG-jJ8"/>
+                                    <constraint firstAttribute="bottom" secondItem="k12-tb-csL" secondAttribute="bottom" constant="20" id="FiI-Fb-yHd"/>
                                     <constraint firstAttribute="width" constant="343" id="z0Z-53-GMs"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="RIW-QO-nFN">
+                                <rect key="frame" x="118" y="20" width="138" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="QCs-Kt-QdE"/>
+                                    <constraint firstAttribute="height" constant="113" id="qwm-EW-h5J"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.38039215686274508" green="0.74901960784313726" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YLA-Gj-L6v" firstAttribute="top" secondItem="uvT-BO-KqC" secondAttribute="bottom" constant="60" id="6F1-jt-Pn3"/>
+                            <constraint firstItem="RIW-QO-nFN" firstAttribute="centerX" secondItem="lBd-LH-J5Y" secondAttribute="centerX" id="1aW-LR-FmF"/>
+                            <constraint firstItem="YLA-Gj-L6v" firstAttribute="centerY" secondItem="lBd-LH-J5Y" secondAttribute="centerY" id="QGd-7a-mXe"/>
+                            <constraint firstItem="RIW-QO-nFN" firstAttribute="top" secondItem="uvT-BO-KqC" secondAttribute="bottom" id="U1u-uO-u7W"/>
                             <constraint firstItem="YLA-Gj-L6v" firstAttribute="centerX" secondItem="lBd-LH-J5Y" secondAttribute="centerX" id="oYL-yT-UKn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tipContainer" destination="YLA-Gj-L6v" id="Fxr-a9-jlh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9es-LP-F4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

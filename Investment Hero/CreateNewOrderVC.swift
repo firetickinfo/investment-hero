@@ -89,7 +89,7 @@ class CreateNewOrderVC: UIViewController {
         activitySpinner.startAnimating()
         dismissKeyboard()
         if let symbolQuery = searchField.text, symbolQuery != "" {
-            WebService.shared.searchForSymbol(withSymbol: symbolQuery, completion: { (found, symbol) in
+            WebService.shared.searchForSymbol(withSymbol: symbolQuery.uppercased(), completion: { (found, symbol) in
                 self.activitySpinner.stopAnimating()
                 self.activitySpinner.isHidden = true
                 self.selectedSymbol = symbol
