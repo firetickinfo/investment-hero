@@ -5,6 +5,12 @@ var router = express.Router();
 var admin = require("firebase-admin");
 
 // Get a database reference to our blog
+var serviceAccount = require("../serviceAccountKey.json");
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://investment-hero.firebaseio.com"
+});
+
 var db = admin.database();
 var ref = db.ref("test");
 
