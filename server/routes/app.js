@@ -1,5 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var jwt = require('jsonwebtoken');
+
+var request = require('request');
+
+var to_json = require('xmljson').to_json;
 
 // Import Admin SDK
 var admin = require("firebase-admin");
@@ -28,6 +33,20 @@ router.get('/', function (req, res, next) {
     });
 
     res.render('index');
+});
+
+router.get('/GetEndOfDayData/:symbol', function (req, res, next) {
+    request('http://ws.nasdaqdod.com/v1/NASDAQAnalytics.asmx/GetEndOfDayData?_Token=BC2B181CF93B441D8C6342120EB0C971&Symbols=' + req.params.symbol + '&StartDate=11/10/2016&EndDate=11/10/2016&MarketCenters=', function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        to_json(body, function (error, data) {
+            console.log (data.ArrayOfEndOfDayPriceCollection.EndOfDayPriceCollection.prices.EndOfDayPrice.message);
+            res.status(200).json({
+                message: "Success",
+                body: data.ArrayOfEndOfDayPriceCollection.EndOfDayPriceCollection
+            });
+        });
+      }
+    });
 });
 
 module.exports = router;
