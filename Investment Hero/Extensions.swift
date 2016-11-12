@@ -15,3 +15,29 @@ extension Double {
         return (self * divisor).rounded() / divisor
     }
 }
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+extension UIButton {
+    
+    func startBlink() {
+        UIView.animate(withDuration: 0.8,
+                       delay:0.0,
+                       options:[.autoreverse, .repeat],
+                       animations: {
+                        self.alpha = 0
+        }, completion: nil)
+    }
+    
+    func stopBlink() {
+        alpha = 1
+        layer.removeAllAnimations()
+    }
+}

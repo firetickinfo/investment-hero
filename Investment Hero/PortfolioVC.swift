@@ -1,5 +1,5 @@
 import UIKit
-
+import Firebase
 class PortfolioVC: UIViewController {
 
     @IBOutlet weak var tableView : UITableView! {
@@ -16,10 +16,47 @@ class PortfolioVC: UIViewController {
         //Login to Firebase
         DataService.shared.signInAnonymously()
         
-        //Get orders (or use stub data)
-        UserdataService.shared.getOrders()
+        registerForPreviewing(with: self, sourceView: tableView)
+        
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DataService.shared.REF_ORDERS.observe(FIRDataEventType.value, with: { (snapshot) -> Void in
+            UserdataService.shared.orders = [Order]()
+            let enumerator = snapshot.children
+            while let orderSnapshot = enumerator.nextObject() as? FIRDataSnapshot {
+                if let order = orderSnapshot.value as? Dictionary<String, AnyObject> {
+                    let newOrder = Order()
+                    if let purchacePrice = order[KEY_PURCHASE_PRICE] as? String {
+                        newOrder.purchasePrice = Double(purchacePrice)
+                    }
+                    if let currentPrice = order[KEY_CURRENT_PRICE] as? String {
+                        newOrder.currentPrice = Double(currentPrice)
+                    }
+                    if let qty = order[KEY_QUANTITY] as? String {
+                        newOrder.quantity = Double(qty)
+                    }
+                    if let stop_loss = order[KEY_STOP_LOSS] as? String {
+                        newOrder.stopLoss = Double(stop_loss)
+                    }
+                    if let stop_plan = order[KEY_STOP_PLAN] as? String {
+                        newOrder.stopPlan = stop_plan
+                    }
+                    if let symbol = order[KEY_SYMBOL] as? String {
+                        newOrder.symbol = symbol
+                    }
+                    if let take_profit = order[KEY_TAKE_PROFIT] as? String {
+                        newOrder.takeProfit = Double(take_profit)
+                    }
+                    if let take_profit_plan = order[KEY_TAKE_PROFIT_PLAN] as? String {
+                        newOrder.takeProfitPlan = take_profit_plan
+                    }
+                    UserdataService.shared.addOrder(withOrder: newOrder)
+                }
+            }
+            self.tableView.reloadData()
+        })
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated. 
@@ -72,9 +109,30 @@ extension PortfolioVC : UITableViewDelegate, UITableViewDataSource {
         }
         return nil
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "Popover", sender: nil)
+    }
 }
 extension PortfolioVC : NewOrderDelegate {
     func dismissNewOrderScreen() {
         print("New order screen dismissed")
+    }
+}
+extension PortfolioVC : UIViewControllerPreviewingDelegate {
+    @available(iOS 9.0, *)
+    public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        //Do your thing
+    }
+
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        if let indexPath = tableView.indexPathForRow(at: location) {
+            print(indexPath.row)
+            //This will show the cell clearly and blur the rest of the screen for our peek.
+            previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
+            if let orderVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PeekOrderVC") as? PeekOrderVC {
+                return orderVC
+            }
+        }
+        return nil
     }
 }

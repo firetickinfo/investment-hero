@@ -10,7 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateNewOrderVC" customModule="Investment_Hero" customModuleProvider="target">
             <connections>
+                <outlet property="nextBtn" destination="jEn-6L-CAv" id="OJZ-9z-FaO"/>
                 <outlet property="popUpView" destination="j0R-39-O7n" id="Gl2-Xf-3DQ"/>
+                <outlet property="searchBtn" destination="rnQ-Ue-UF3" id="HBu-zM-1Yq"/>
+                <outlet property="searchField" destination="0Y0-2v-icC" id="mmf-6x-77g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +26,7 @@
                     <rect key="frame" x="20" y="84" width="335" height="500"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="J2C-tB-uaa">
-                            <rect key="frame" x="97.5" y="415" width="140" height="50"/>
+                            <rect key="frame" x="143" y="415" width="50" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ej-7E-vXm">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -37,17 +40,20 @@
                                     </connections>
                                 </button>
                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEn-6L-CAv">
-                                    <rect key="frame" x="90" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="50" y="0.0" width="0.0" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="kwp-6O-au7"/>
                                         <constraint firstAttribute="width" constant="50" id="skD-WC-MT5"/>
                                     </constraints>
                                     <state key="normal" image="accept_btn"/>
+                                    <connections>
+                                        <action selector="nextBtnPressed:" destination="-1" eventType="touchUpInside" id="0ua-Lz-S4G"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a symbol" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-2v-icC" customClass="MaterialTextField" customModule="Investment_Hero" customModuleProvider="target">
-                            <rect key="frame" x="29.5" y="101" width="276" height="40"/>
+                            <rect key="frame" x="30" y="101" width="276" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="585-wD-e7O"/>
                                 <constraint firstAttribute="width" constant="276" id="QEi-Zg-Pad"/>
@@ -56,13 +62,30 @@
                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnQ-Ue-UF3">
+                            <rect key="frame" x="129" y="158" width="77" height="30"/>
+                            <color key="backgroundColor" red="0.38039215686274508" green="0.74901960784313726" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="QDe-AL-pZt"/>
+                                <constraint firstAttribute="width" constant="77" id="bcX-DI-bcr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                            <state key="normal" title="search">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="searchBtnPressed:" destination="-1" eventType="touchUpInside" id="AGZ-0i-Sq5"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="0Y0-2v-icC" firstAttribute="top" secondItem="j0R-39-O7n" secondAttribute="top" constant="101" id="0cv-sE-VCr"/>
+                        <constraint firstItem="rnQ-Ue-UF3" firstAttribute="centerX" secondItem="j0R-39-O7n" secondAttribute="centerX" id="3Y1-0W-B1F"/>
                         <constraint firstAttribute="bottom" secondItem="J2C-tB-uaa" secondAttribute="bottom" constant="35" id="IPb-Y4-HOq"/>
                         <constraint firstItem="0Y0-2v-icC" firstAttribute="centerX" secondItem="j0R-39-O7n" secondAttribute="centerX" id="Led-5C-MMC"/>
                         <constraint firstAttribute="height" constant="500" id="TVf-wO-wDY"/>
+                        <constraint firstItem="rnQ-Ue-UF3" firstAttribute="top" secondItem="0Y0-2v-icC" secondAttribute="bottom" constant="17" id="rYB-Rg-250"/>
                         <constraint firstItem="J2C-tB-uaa" firstAttribute="centerX" secondItem="j0R-39-O7n" secondAttribute="centerX" id="tEy-4e-Hjh"/>
                     </constraints>
                 </view>

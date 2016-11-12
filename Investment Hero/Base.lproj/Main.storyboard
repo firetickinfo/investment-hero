@@ -218,6 +218,24 @@
             </objects>
             <point key="canvasLocation" x="-146.40000000000001" y="-246.02698650674665"/>
         </scene>
+        <!--Peek OrderVC-->
+        <scene sceneID="YQO-sv-UhX">
+            <objects>
+                <viewController storyboardIdentifier="PeekOrderVC" id="7Mb-h0-l1o" customClass="PeekOrderVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZCK-kT-9p3"/>
+                        <viewControllerLayoutGuide type="bottom" id="MjY-Va-ZVf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tqh-On-gkA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIn-5X-OUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="614" y="-228"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2Fz-1K-1ns">
             <objects>
@@ -242,6 +260,10 @@
         <scene sceneID="tub-e3-g1U">
             <objects>
                 <viewController id="TEL-Ti-FVb" customClass="ChatVC" customModule="Investment_Hero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h04-9V-hKn"/>
+                        <viewControllerLayoutGuide type="bottom" id="XEG-UN-qfJ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="q44-Jt-zw0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="538"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
