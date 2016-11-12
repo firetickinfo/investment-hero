@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		125FFBA3DFD821FD6F5B29E4 /* Pods_Investment_Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDA497E81D49ABA36EDE727 /* Pods_Investment_Hero.framework */; };
 		46AE5E0A1DD6889A009ABD5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E091DD6889A009ABD5F /* AppDelegate.swift */; };
 		46AE5E0C1DD6889A009ABD5F /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E0B1DD6889A009ABD5F /* PortfolioVC.swift */; };
 		46AE5E0F1DD6889A009ABD5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46AE5E0D1DD6889A009ABD5F /* Main.storyboard */; };
 		46AE5E111DD6889A009ABD5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AE5E101DD6889A009ABD5F /* Assets.xcassets */; };
 		46AE5E141DD6889A009ABD5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46AE5E121DD6889A009ABD5F /* LaunchScreen.storyboard */; };
 		46AE5E211DD68A50009ABD5F /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E201DD68A50009ABD5F /* ConversationVC.swift */; };
+		46AE5E231DD68CE3009ABD5F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E221DD68CE3009ABD5F /* Constants.swift */; };
+		46AE5E261DD68E11009ABD5F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E251DD68E11009ABD5F /* MaterialView.swift */; };
+		46AE5E291DD69354009ABD5F /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E281DD69354009ABD5F /* PortfolioCell.swift */; };
+		46AE5E2B1DD696D9009ABD5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46AE5E2A1DD696D9009ABD5F /* GoogleService-Info.plist */; };
+		46AE5E2D1DD6975C009ABD5F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE5E2C1DD6975C009ABD5F /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CFA8067BB1758BE2B3ABB2B /* Pods-Investment Hero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Investment Hero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Investment Hero/Pods-Investment Hero.debug.xcconfig"; sourceTree = "<group>"; };
 		46AE5E061DD6889A009ABD5F /* Investment Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Investment Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AE5E091DD6889A009ABD5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46AE5E0B1DD6889A009ABD5F /* PortfolioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioVC.swift; sourceTree = "<group>"; };
@@ -24,6 +31,13 @@
 		46AE5E131DD6889A009ABD5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46AE5E151DD6889A009ABD5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46AE5E201DD68A50009ABD5F /* ConversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
+		46AE5E221DD68CE3009ABD5F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		46AE5E251DD68E11009ABD5F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		46AE5E281DD69354009ABD5F /* PortfolioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
+		46AE5E2A1DD696D9009ABD5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46AE5E2C1DD6975C009ABD5F /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		4A33E5327D6CC78CB903FA44 /* Pods-Investment Hero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Investment Hero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Investment Hero/Pods-Investment Hero.release.xcconfig"; sourceTree = "<group>"; };
+		CBDA497E81D49ABA36EDE727 /* Pods_Investment_Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Investment_Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125FFBA3DFD821FD6F5B29E4 /* Pods_Investment_Hero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21066F57DABDFF987EFD6FBF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CFA8067BB1758BE2B3ABB2B /* Pods-Investment Hero.debug.xcconfig */,
+				4A33E5327D6CC78CB903FA44 /* Pods-Investment Hero.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		46AE5DFD1DD6889A009ABD5F = {
 			isa = PBXGroup;
 			children = (
 				46AE5E081DD6889A009ABD5F /* Investment Hero */,
 				46AE5E071DD6889A009ABD5F /* Products */,
+				21066F57DABDFF987EFD6FBF /* Pods */,
+				831DD59DB2A692B18A0B33B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +101,8 @@
 		46AE5E1C1DD6896C009ABD5F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46AE5E271DD69331009ABD5F /* Tableview Cells */,
+				46AE5E241DD68DF6009ABD5F /* Material  */,
 				46AE5E0D1DD6889A009ABD5F /* Main.storyboard */,
 				46AE5E121DD6889A009ABD5F /* LaunchScreen.storyboard */,
 			);
@@ -93,9 +121,11 @@
 		46AE5E1E1DD68975009ABD5F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46AE5E2A1DD696D9009ABD5F /* GoogleService-Info.plist */,
 				46AE5E101DD6889A009ABD5F /* Assets.xcassets */,
 				46AE5E151DD6889A009ABD5F /* Info.plist */,
 				46AE5E091DD6889A009ABD5F /* AppDelegate.swift */,
+				46AE5E221DD68CE3009ABD5F /* Constants.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -103,8 +133,33 @@
 		46AE5E1F1DD6897A009ABD5F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				46AE5E2C1DD6975C009ABD5F /* DataService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		46AE5E241DD68DF6009ABD5F /* Material  */ = {
+			isa = PBXGroup;
+			children = (
+				46AE5E251DD68E11009ABD5F /* MaterialView.swift */,
+			);
+			name = "Material ";
+			sourceTree = "<group>";
+		};
+		46AE5E271DD69331009ABD5F /* Tableview Cells */ = {
+			isa = PBXGroup;
+			children = (
+				46AE5E281DD69354009ABD5F /* PortfolioCell.swift */,
+			);
+			name = "Tableview Cells";
+			sourceTree = "<group>";
+		};
+		831DD59DB2A692B18A0B33B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBDA497E81D49ABA36EDE727 /* Pods_Investment_Hero.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,9 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46AE5E181DD6889A009ABD5F /* Build configuration list for PBXNativeTarget "Investment Hero" */;
 			buildPhases = (
+				E3CEF03E6E5724DD1D21484A /* [CP] Check Pods Manifest.lock */,
 				46AE5E021DD6889A009ABD5F /* Sources */,
 				46AE5E031DD6889A009ABD5F /* Frameworks */,
 				46AE5E041DD6889A009ABD5F /* Resources */,
+				BEC7823E7B7041704731021E /* [CP] Embed Pods Frameworks */,
+				6C0C8162EF758930E249B6BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46AE5E141DD6889A009ABD5F /* LaunchScreen.storyboard in Resources */,
+				46AE5E2B1DD696D9009ABD5F /* GoogleService-Info.plist in Resources */,
 				46AE5E111DD6889A009ABD5F /* Assets.xcassets in Resources */,
 				46AE5E0F1DD6889A009ABD5F /* Main.storyboard in Resources */,
 			);
@@ -175,14 +234,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6C0C8162EF758930E249B6BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Investment Hero/Pods-Investment Hero-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEC7823E7B7041704731021E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Investment Hero/Pods-Investment Hero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3CEF03E6E5724DD1D21484A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		46AE5E021DD6889A009ABD5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				46AE5E0C1DD6889A009ABD5F /* PortfolioVC.swift in Sources */,
+				46AE5E2D1DD6975C009ABD5F /* DataService.swift in Sources */,
 				46AE5E211DD68A50009ABD5F /* ConversationVC.swift in Sources */,
+				46AE5E261DD68E11009ABD5F /* MaterialView.swift in Sources */,
 				46AE5E0A1DD6889A009ABD5F /* AppDelegate.swift in Sources */,
+				46AE5E291DD69354009ABD5F /* PortfolioCell.swift in Sources */,
+				46AE5E231DD68CE3009ABD5F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,10 +412,12 @@
 		};
 		46AE5E191DD6889A009ABD5F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CFA8067BB1758BE2B3ABB2B /* Pods-Investment Hero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H8F484VNTV;
 				INFOPLIST_FILE = "Investment Hero/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.yhack.Investment-Hero";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -314,10 +427,12 @@
 		};
 		46AE5E1A1DD6889A009ABD5F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A33E5327D6CC78CB903FA44 /* Pods-Investment Hero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H8F484VNTV;
 				INFOPLIST_FILE = "Investment Hero/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.yhack.Investment-Hero";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -344,6 +459,7 @@
 				46AE5E1A1DD6889A009ABD5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
