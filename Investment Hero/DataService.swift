@@ -7,9 +7,19 @@
 //
 
 import Foundation
+import Firebase
 
 class DataService {
     //Singleton
     static let shared = DataService()
     
+    func signInAnonymously() {
+        FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+            if let err = error { // 3
+                print("IHERO : \(err.localizedDescription)")
+                return
+            }
+            print("IHERO : User has successfully logged in")
+        })
+    }
 }
