@@ -5,7 +5,7 @@ var starterDB = {
        "-KWOSE9hzzK4XKkVZKY0":{
           "current_price":"50",
           "img":"http://investment-hero.herokuapp.com/img/MSFT.jpg",
-          "purchase_price":"55",
+          "purchase_price":"50",
           "quantity":"123",
           "stop_loss":"46",
           "stop_plan":"did",
@@ -16,7 +16,7 @@ var starterDB = {
        "-KWOULtlkkGSGt-vRTR1":{
           "current_price":"20",
           "img":"http://investment-hero.herokuapp.com/img/AAPL.jpg",
-          "purchase_price":"107.79",
+          "purchase_price":"20",
           "quantity":"123",
           "stop_loss":"18.4",
           "stop_plan":"fjfjd",
@@ -27,7 +27,7 @@ var starterDB = {
        "-KWPAS3YBCnkuCDqQ71F":{
           "current_price":"40",
           "img":"http://investment-hero.herokuapp.com/img/IBM.jpg",
-          "purchase_price":"160.22",
+          "purchase_price":"40",
           "quantity":"123",
           "stop_loss":"36.8",
           "stop_plan":"fhfjd",
