@@ -22,7 +22,7 @@ class PortfolioVC: UIViewController {
         totalPortfolioValue.text = ""
         registerForPreviewing(with: self, sourceView: tableView)
         loadingSpinner.isHidden = true
-        InvestingManager.shared.observeNewMessages()
+        //InvestingManager.shared.observeNewMessages()
         
     }
     override func viewDidAppear(_ animated: Bool) {

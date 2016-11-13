@@ -60,7 +60,7 @@
                             <constraint firstItem="T2q-SM-18V" firstAttribute="top" secondItem="Upc-F0-2LX" secondAttribute="bottom" id="wkf-sy-HsG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Talk" id="LCo-fi-8VW"/>
+                    <tabBarItem key="tabBarItem" title="Talk" image="talk" id="LCo-fi-8VW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFx-RD-Gnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,7 +240,7 @@
                             <constraint firstItem="ZVY-Gh-w3p" firstAttribute="leading" secondItem="MN4-yd-8y3" secondAttribute="leading" id="zTM-Rq-tk0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Portfolio" id="S3N-P5-gKI"/>
+                    <tabBarItem key="tabBarItem" title="Portfolio" image="portfolio" id="S3N-P5-gKI"/>
                     <connections>
                         <outlet property="loadingSpinner" destination="Lor-8e-W4O" id="eba-y5-bdf"/>
                         <outlet property="tableView" destination="iRT-yt-Dcd" id="Tl1-ei-CJL"/>
@@ -625,5 +625,7 @@
         <image name="close_quotes" width="212" height="161"/>
         <image name="logo" width="1024" height="1023"/>
         <image name="open_quotes" width="234" height="170"/>
+        <image name="portfolio" width="140" height="145"/>
+        <image name="talk" width="145" height="133"/>
     </resources>
 </document>
