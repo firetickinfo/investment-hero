@@ -220,7 +220,7 @@ angular.module('dangerZone')
                     senderName: "Investment Hero",
                     plan: messagePlan,
                     type: messageType,
-                    text: messageContent
+                    text: messageContent + " According to your plan, " + messagePlan
                 });
             }
             
