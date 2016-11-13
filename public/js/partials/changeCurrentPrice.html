@@ -1,0 +1,24 @@
+<md-dialog aria-label="Change Current Price">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        Change the current price for ({{item.symbol}})
+        <span flex></span>
+      </div>
+    </md-toolbar>
+        
+    <md-dialog-content>
+        <md-content layout-xs="column" layout="row" style="padding: 30px;">
+                <div class="whiteContainer-content" style="width: 100%; padding: 0;">
+                      <form name="userForm" style="width: 100%; margin: auto;">
+                          <span>Current Price: </span>{{item.current_price}}
+                          <md-input-container class="md-block" style="width: 100%;" flex-gt-sm>
+                            <label>New Price</label>
+                            <input ng-model="item.current_price">
+                          </md-input-container>
+
+                          <md-button class="md-raised md-primary floatRight" ng-click="updatePrice()" ng-disabled="newPrice.length == 0">Update</md-button>
+                      </form>
+                </div>
+        </md-content>
+    </md-dialog-content>
+</md-dialog>
