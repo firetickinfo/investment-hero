@@ -31,4 +31,9 @@
     
     <md-progress-circular md-mode="indeterminate" md-diameter="100px" class="md-warn" style="margin: 30px auto;" ng-hide="loaded">
     </md-progress-circular>
+    
+    <md-button ng-click="populate()" class="md-raised md-primary" style="display: table; width: 250px; margin: 30px auto;" ng-hide="numOfKeys() > 0">
+        <md-icon class="mdi mdi-fix mdi-auto-fix white"></md-icon>
+        Add Items
+    </md-button>
 </md-card>

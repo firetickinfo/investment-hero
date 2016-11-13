@@ -24,8 +24,10 @@
 <body ng-app="dangerZone" ng-controller="dangerZoneCtrl">
     <md-toolbar class="md-hue-2">
       <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings">
-          <md-icon class="mdi mdi-menu mdi-25px-fix white"></md-icon>
+        <img ng-src="img/logo.png" style="width: 75px; margin-right: 30px;" />
+        
+        <md-button class="md-icon-button" ui-sref="index" ng-if="'updatePrices' | isState" style="margin-left: 0;">
+          <md-icon class="mdi mdi-arrow-left mdi-25px-fix mdi-fix white"></md-icon>
         </md-button>
         
         <h2>

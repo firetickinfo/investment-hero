@@ -90,15 +90,6 @@ angular.module('dangerZone')
                 evt.preventDefault();
                 $state.go(to.redirectTo, params, {location: 'replace'})
               }
-                            
-              if (to.url == '/results' && params.statusesObject == null) {
-                  $state.go('index', {});
-              }
-              
-              if (to.url == '/index') {
-                  variables = [];
-                  statuses = [];
-              }
             });
         }])
         
@@ -222,6 +213,15 @@ angular.module('dangerZone')
                     type: messageType,
                     text: messageContent + " According to your plan, " + messagePlan
                 });
+            }
+            
+            $scope.populate = function() {
+                var ref = firebase.database().ref().child("orders");
+                $scope.orders = $firebaseArray(ref);
+                
+                for (var i = 0; i < Object.keys(starterDB).length; i++) {
+                    $scope.orders.$add(starterDB[Object.keys(starterDB)[i]]);
+                }
             }
             
             $scope.remove = function(objKey) {
