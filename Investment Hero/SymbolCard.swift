@@ -22,6 +22,7 @@ class SymbolCard: UIView {
     @IBOutlet weak var closeLbl : UILabel!
     @IBOutlet weak var volumeLbl : UILabel!
     @IBOutlet weak var cannotFindSymbol : UILabel!
+    @IBOutlet weak var tickerLogo : UIImageView!
     
     var symbol : Symbol?
     
@@ -61,6 +62,7 @@ class SymbolCard: UIView {
                 lowLbl.text = "low : \(symbol.low!.asLocaleCurrency)"
                 closeLbl.text = "close : \(symbol.close!.asLocaleCurrency)"
                 volumeLbl.text = "volume \(symbol.volume!)"
+                tickerLogo.image = UIImage(named: "\(symbol.symbolName!.uppercased()).jpg")
             }
         }
     }

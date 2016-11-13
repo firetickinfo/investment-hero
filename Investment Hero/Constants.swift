@@ -14,6 +14,7 @@ let COLOUR_SCHEME = UIColor(red:0.38, green:0.75, blue:0.68, alpha:1.0);
 
 //Reusable Cell IDS
 let PORTFOLIO_CELL = "PortfolioCell"
+let ORDER_DETAILS_CELL = "order_details_cell"
 
 //Segues names
 let CHAT_SEGUE = "chatvc_segue"
@@ -29,3 +30,4 @@ let KEY_QUANTITY = "quantity"
 let KEY_STOP_PLAN = "stop_plan"
 let KEY_TAKE_PROFIT_PLAN = "take_profit_plan"
 let KEY_CONVERSATION = "conversation"
+let KEY_IMAGE = "img"

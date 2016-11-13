@@ -18,6 +18,7 @@ class CreateNewOrderVC: UIViewController {
     @IBOutlet weak var searchField : MaterialTextField!
     @IBOutlet weak var nextBtn : UIButton!
     @IBOutlet weak var searchBtn : UIButton!
+    @IBOutlet weak var activitySpinner : UIActivityIndicatorView!
     
     var delegate : NewOrderDelegate?
     var currentCard : SymbolCard?
@@ -28,6 +29,7 @@ class CreateNewOrderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
+        activitySpinner.isHidden = true
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.popUpView.layer.cornerRadius = 0
         self.popUpView.layer.shadowOpacity = 0.8
@@ -83,9 +85,13 @@ class CreateNewOrderVC: UIViewController {
         self.removeAnimate()
     }
     @IBAction func searchBtnPressed(_ sender: AnyObject) {
+        activitySpinner.isHidden = false
+        activitySpinner.startAnimating()
         dismissKeyboard()
         if let symbolQuery = searchField.text, symbolQuery != "" {
-            WebService.shared.searchForSymbol(withSymbol: symbolQuery, completion: { (found, symbol) in
+            WebService.shared.searchForSymbol(withSymbol: symbolQuery.uppercased(), completion: { (found, symbol) in
+                self.activitySpinner.stopAnimating()
+                self.activitySpinner.isHidden = true
                 self.selectedSymbol = symbol
                 if found {
                     self.showNextCard(withSymbol: symbol)

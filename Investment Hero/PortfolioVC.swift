@@ -2,6 +2,8 @@ import UIKit
 import Firebase
 class PortfolioVC: UIViewController {
 
+    @IBOutlet weak var totalPortfolioValue : UILabel!
+    
     @IBOutlet weak var tableView : UITableView! {
         didSet {
             tableView.delegate = self
@@ -9,18 +11,24 @@ class PortfolioVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var loadingSpinner : UIActivityIndicatorView!
+    
     //MARK : Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //Login to Firebase
         DataService.shared.signInAnonymously()
-        
+        totalPortfolioValue.text = ""
         registerForPreviewing(with: self, sourceView: tableView)
+        loadingSpinner.isHidden = true
+        InvestingManager.shared.observeNewMessages()
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        loadingSpinner.isHidden = false
+        loadingSpinner.startAnimating()
         DataService.shared.REF_ORDERS.observe(FIRDataEventType.value, with: { (snapshot) -> Void in
             UserdataService.shared.orders = [Order]()
             let enumerator = snapshot.children
@@ -54,6 +62,9 @@ class PortfolioVC: UIViewController {
                     UserdataService.shared.addOrder(withOrder: newOrder)
                 }
             }
+            self.loadingSpinner.stopAnimating()
+            self.loadingSpinner.isHidden = true
+            self.totalPortfolioValue.text = UserdataService.shared.calculateTotalPortfolioValue().asLocaleCurrency
             self.tableView.reloadData()
         })
     }
@@ -123,10 +134,11 @@ extension PortfolioVC : UIViewControllerPreviewingDelegate {
 
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         if let indexPath = tableView.indexPathForRow(at: location) {
-            print(indexPath.row)
+            guard let order = UserdataService.shared.orders?[indexPath.row] else { return nil }
             //This will show the cell clearly and blur the rest of the screen for our peek.
             previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
             if let orderVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PeekOrderVC") as? PeekOrderVC {
+                orderVC.setup(withOrder: order)
                 return orderVC
             }
         }
