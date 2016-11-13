@@ -51,4 +51,48 @@ class DataService {
             completion()
         }
     }
+    
+    func recreateDefaultOrders(){
+        var order = Order()
+        order.symbol = "MSFT"
+        order.purchasePrice = 55
+        order.quantity = 123
+        order.currentPrice = 50
+        order.stopLoss = 46
+        order.stopPlan = "Stopped out a support"
+        order.takeProfit = 54
+        order.takeProfitPlan = "Take profit at resistance level"
+        
+        self.createNewOrder(withOrder: order) { () -> Void in
+        
+        }
+        
+        order = Order()
+        order.symbol = "AAPL"
+        order.purchasePrice = 107.59
+        order.quantity = 152
+        order.currentPrice = 20
+        order.stopLoss = 18.4
+        order.stopPlan = "Stopped out a support"
+        order.takeProfit = 21.6
+        order.takeProfitPlan = "Take profit at resistance level"
+        
+        self.createNewOrder(withOrder: order) { () -> Void in
+            
+        }
+        
+        order = Order()
+        order.symbol = "IBM"
+        order.purchasePrice = 106.22
+        order.quantity = 152
+        order.currentPrice = 40
+        order.stopLoss = 36.8
+        order.stopPlan = "Stopped out a support"
+        order.takeProfit = 43.2
+        order.takeProfitPlan = "Take profit at resistance level"
+        
+        self.createNewOrder(withOrder: order) { () -> Void in
+            
+        }
+    }
 }

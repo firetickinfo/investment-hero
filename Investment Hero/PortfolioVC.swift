@@ -11,6 +11,8 @@ class PortfolioVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var loadingSpinner : UIActivityIndicatorView!
+    
     //MARK : Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +21,14 @@ class PortfolioVC: UIViewController {
         DataService.shared.signInAnonymously()
         totalPortfolioValue.text = ""
         registerForPreviewing(with: self, sourceView: tableView)
+        loadingSpinner.isHidden = true
+        InvestingManager.shared.observeNewMessages()
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        loadingSpinner.isHidden = false
+        loadingSpinner.startAnimating()
         DataService.shared.REF_ORDERS.observe(FIRDataEventType.value, with: { (snapshot) -> Void in
             UserdataService.shared.orders = [Order]()
             let enumerator = snapshot.children
@@ -56,6 +62,8 @@ class PortfolioVC: UIViewController {
                     UserdataService.shared.addOrder(withOrder: newOrder)
                 }
             }
+            self.loadingSpinner.stopAnimating()
+            self.loadingSpinner.isHidden = true
             self.totalPortfolioValue.text = UserdataService.shared.calculateTotalPortfolioValue().asLocaleCurrency
             self.tableView.reloadData()
         })

@@ -56,7 +56,7 @@ class PeekOrderVC: UIViewController {
             symbolCard.setupCard(withSymbol: symbol)
             symbolCard.center = AnimationEngine.offScreenRightPosition
             self.view.addSubview(symbolCard)
-            AnimationEngine.animateToPosition(view : symbolCard, position: CGPoint(x: UIScreen.main.bounds.midX, y: 230), completion: { (_, _) in
+            AnimationEngine.animateToPosition(view : symbolCard, position: CGPoint(x: UIScreen.main.bounds.midX, y: 200), completion: { (_, _) in
             })
         }
     }
@@ -70,10 +70,32 @@ extension PeekOrderVC : UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 7
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ORDER_DETAILS_CELL, for: indexPath)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: ORDER_DETAILS_CELL, for: indexPath) as? OrderDetailsCell {
+            if (indexPath.row == 0) {
+                cell.setData(withType: "Current Price", withValue: (order.currentPrice!.asLocaleCurrency))
+            } else if (indexPath.row == 1) {
+                cell.setData(withType: "Purchase Price", withValue: order.purchasePrice!.asLocaleCurrency)
+            }
+            else if (indexPath.row == 2) {
+                cell.setData(withType: "Quantity", withValue: String(describing: order.quantity!))
+            }
+            else if (indexPath.row == 3) {
+                cell.setData(withType: "Stop-Loss", withValue: order.stopLoss!.asLocaleCurrency)
+            }
+            else if (indexPath.row == 4) {
+                cell.setData(withType: "Stop-Loss Plan", withValue: order.stopPlan!)
+            }
+            else if (indexPath.row == 5) {
+                cell.setData(withType: "Take-Profit", withValue: order.takeProfit!.asLocaleCurrency)
+            }
+            if (indexPath.row == 6) {
+                cell.setData(withType: "Take-Profit Plan", withValue: order.takeProfitPlan!)
+            }
+            return cell
+        }
+        return UITableViewCell()
     }
 }

@@ -12,8 +12,7 @@ class WelcomePageVC: UIPageViewController, UIScrollViewDelegate {
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.newColoredViewController(page: "page1"),
-                self.newColoredViewController(page: "page2"),
-                self.newColoredViewController(page: "page3")]
+                self.newColoredViewController(page: "page2")]
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
