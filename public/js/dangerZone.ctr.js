@@ -194,7 +194,7 @@ angular.module('dangerZone')
                             var tempMsg = $scope.orders[key].symbol + " just hit the Take Profit mark!";
                             
                             $scope.showSimpleToast(tempMsg);
-                            $scope.sendMessage(tempMsg, "profit");
+                            $scope.sendMessage(tempMsg, "profit", $scope.orders[key].take_profit_plan);
                             
                             $scope.remove(key);
                         }
@@ -203,7 +203,7 @@ angular.module('dangerZone')
                             var tempMsg = $scope.orders[key].symbol + " just hit the Stop Loss mark!";
                             
                             $scope.showSimpleToast($scope.orders[key].symbol + " just hit the Stop Loss mark!");
-                            $scope.sendMessage(tempMsg, "loss");
+                            $scope.sendMessage(tempMsg, "loss", $scope.orders[key].stop_loss_plan);
                             
                             $scope.remove(key);
                         }
@@ -211,13 +211,14 @@ angular.module('dangerZone')
                 }
             }
             
-            $scope.sendMessage = function(messageContent, messageType) {
+            $scope.sendMessage = function(messageContent, messageType, messagePlan) {
                 var ref = firebase.database().ref().child("conversation");
                 $scope.conversation = $firebaseArray(ref);
 
                 $scope.conversation.$add({
                     senderId: "1234",
                     senderName: "Investment Hero",
+                    plan: messagePlan,
                     type: messageType,
                     text: messageContent
                 });
