@@ -1,6 +1,42 @@
 var serverURI = "https://investment-hero.herokuapp.com";
 var getOrders = serverURI + "/getOrders";
 
+var starterDB = {
+       "-KWOSE9hzzK4XKkVZKY0":{
+          "current_price":"50",
+          "img":"http://investment-hero.herokuapp.com/img/MSFT.jpg",
+          "purchase_price":"55",
+          "quantity":"123",
+          "stop_loss":"46",
+          "stop_plan":"did",
+          "symbol":"MSFT",
+          "take_profit":"54",
+          "take_profit_plan":"CNBC"
+       },
+       "-KWOULtlkkGSGt-vRTR1":{
+          "current_price":"20",
+          "img":"http://investment-hero.herokuapp.com/img/AAPL.jpg",
+          "purchase_price":"107.79",
+          "quantity":"123",
+          "stop_loss":"18.4",
+          "stop_plan":"fjfjd",
+          "symbol":"AAPL",
+          "take_profit":"21.6",
+          "take_profit_plan":"CNBC"
+       },
+       "-KWPAS3YBCnkuCDqQ71F":{
+          "current_price":"40",
+          "img":"http://investment-hero.herokuapp.com/img/IBM.jpg",
+          "purchase_price":"160.22",
+          "quantity":"123",
+          "stop_loss":"36.8",
+          "stop_plan":"fhfjd",
+          "symbol":"IBM",
+          "take_profit":"43.2",
+          "take_profit_plan":"cjcjhc"
+       }
+    };
+
 angular.module('dangerZone')
         .config(function($mdThemingProvider) {
           $mdThemingProvider.definePalette('hero', {
@@ -74,7 +110,7 @@ angular.module('dangerZone')
             
         })
         
-        .controller("updatePricesCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $stateParams, $http, $mdDialog, $firebaseObject, $interval) {
+        .controller("updatePricesCtrl", function($rootScope, $scope, $mdSidenav, $mdToast, $state, $stateParams, $http, $mdDialog, $firebaseObject, $firebaseArray, $interval) {
             var interval;
             
             $scope.$root.progress = true;
@@ -155,24 +191,47 @@ angular.module('dangerZone')
                         console.log(newPrice + " " + $scope.orders[key].take_profit + " " + $scope.orders[key].stop_loss)
                         
                         if (newPrice >= parseFloat($scope.orders[key].take_profit)) {
-                            $scope.showSimpleToast($scope.orders[key].symbol + " just hit the Take Profit mark!");
+                            var tempMsg = $scope.orders[key].symbol + " just hit the Take Profit mark!";
+                            
+                            $scope.showSimpleToast(tempMsg);
+                            $scope.sendMessage(tempMsg, "profit");
+                            
+                            $scope.remove(key);
                         }
                         
                         if (newPrice <= parseFloat($scope.orders[key].stop_loss)) {
+                            var tempMsg = $scope.orders[key].symbol + " just hit the Stop Loss mark!";
+                            
                             $scope.showSimpleToast($scope.orders[key].symbol + " just hit the Stop Loss mark!");
+                            $scope.sendMessage(tempMsg, "loss");
+                            
+                            $scope.remove(key);
                         }
                     }
                 }
+            }
+            
+            $scope.sendMessage = function(messageContent, messageType) {
+                var ref = firebase.database().ref().child("conversation");
+                $scope.conversation = $firebaseArray(ref);
+
+                $scope.conversation.$add({
+                    senderId: "1234",
+                    senderName: "Investment Hero",
+                    type: messageType,
+                    text: messageContent
+                });
             }
             
             $scope.remove = function(objKey) {
                 for (var key in syncObject) {
                     if (key == objKey) {
                         delete $scope.orders[objKey];
+                        console.log("DELETED");
                     }
                 }
             }
-                        
+            
 //            $scope.changeCurrentPrice = function(item) {                                
 //                var id = Object.keys(syncObject).filter(function(key) {return syncObject[key] === item})[0];
 //                

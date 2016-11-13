@@ -1,4 +1,4 @@
-<md-card>
+<md-card>    
     <md-list ng-hide="numOfKeys() == 0">
         <md-list-item ng-repeat="(key, order) in orders track by $index" class="noright" ng-click="changeCurrentPrice(order)">
             <img alt="{{order.symbol}}" ng-src="img/{{order.symbol}}.jpg" class="md-avatar stock-icon" />
@@ -18,7 +18,7 @@
     </md-list>
     
     <section layout="row" layout-sm="column" layout-align="center center" style="margin-top: 15px; margin-bottom: 30px;" ng-hide="numOfKeys() == 0" layout-wrap>
-        <md-button ng-click="startUpdating()" class="md-raised  md-primary" style="display: table; width: 250px;" ng-disabled="simulation">
+        <md-button ng-click="startUpdating()" class="md-raised md-primary" style="display: table; width: 250px;" ng-disabled="simulation">
             <md-icon class="mdi mdi-fix mdi-auto-fix white"></md-icon>
             Simulate the Market
         </md-button>
